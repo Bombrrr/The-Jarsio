@@ -1,0 +1,122 @@
+[gd_scene load_steps=14 format=3 uid="uid://dyt16tqmfw0es"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_wg3ea"]
+[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_nc713"]
+[ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="3_fl3vr"]
+[ext_resource type="Script" path="res://Black2.gd" id="4_qn32e"]
+[ext_resource type="Shader" path="res://dis.gdshader" id="5_ekglp"]
+[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="6_1mspy"]
+[ext_resource type="Script" path="res://Black3.gd" id="6_hxafe"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e4spq"]
+noise_type = 2
+seed = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x4hyd"]
+seamless = true
+seamless_blend_skirt = 0.063
+noise = SubResource("FastNoiseLite_e4spq")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7ydhk"]
+noise_type = 2
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ruo7t"]
+seamless = true
+noise = SubResource("FastNoiseLite_7ydhk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3ted"]
+shader = ExtResource("5_ekglp")
+shader_parameter/scroll1 = Vector2(0.05, 0.05)
+shader_parameter/scroll2 = Vector2(0.05, 0.05)
+shader_parameter/distortion_strength = 0.2
+shader_parameter/tone_color = Color(0.0980392, 0.0980392, 0.0980392, 0.592157)
+shader_parameter/top_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+shader_parameter/light_start = 0.4
+shader_parameter/light_end = 0.4
+shader_parameter/noise1 = SubResource("NoiseTexture2D_x4hyd")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_ruo7t")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c8mhv"]
+size = Vector2(2000, 1200)
+orientation = 2
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wg3ea")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = -802.0
+offset_bottom = -436.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.31947, 3.3263)
+
+[node name="Credit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Everything was created by Henry Domjan
+Made using godot engine"
+
+[node name="Credit2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "My dad told me to use tags instead of
+buttons for text  boxes but i didnt (lazy)"
+
+[node name="return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Return to menu"
+
+[node name="Untitled(1)" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(577, 320)
+scale = Vector2(0.622222, 0.622222)
+texture = ExtResource("2_nc713")
+
+[node name="Black" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.741176)
+z_index = -1
+position = Vector2(562.679, 227.046)
+scale = Vector2(6.57014, 6.82733)
+texture = ExtResource("3_fl3vr")
+
+[node name="Black2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.952941)
+z_index = -1
+position = Vector2(562.679, 227.046)
+scale = Vector2(6.57014, 6.82733)
+texture = ExtResource("3_fl3vr")
+script = ExtResource("4_qn32e")
+
+[node name="Timer" type="Timer" parent="Black2"]
+
+[node name="Timer2" type="Timer" parent="Black2"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+z_index = 3
+material = SubResource("ShaderMaterial_k3ted")
+position = Vector2(600.52, 248.434)
+mesh = SubResource("PlaneMesh_c8mhv")
+texture = ExtResource("2_nc713")
+
+[node name="Black3" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(658.5, 285)
+scale = Vector2(0.931771, 1.18704)
+texture = ExtResource("6_1mspy")
+script = ExtResource("6_hxafe")
+
+[connection signal="pressed" from="VBoxContainer/return" to="Black3" method="_on_return_pressed"]
+[connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Black2/Timer2" to="Black2" method="_on_timer_2_timeout"]

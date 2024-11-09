@@ -1,0 +1,167 @@
+[gd_scene load_steps=18 format=3 uid="uid://cl356nit6ykvv"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_r2tmy"]
+[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_h1edb"]
+[ext_resource type="Texture2D" uid="uid://c2jxxx2unoumb" path="res://sports_esports_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="3_dral5"]
+[ext_resource type="Texture2D" uid="uid://cqatvlfjwym7u" path="res://keyboard_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="4_rnquh"]
+[ext_resource type="Texture2D" uid="uid://bxh2d1gp8l5a3" path="res://credit_card_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="5_hoj5k"]
+[ext_resource type="Texture2D" uid="uid://b53qxrq1yivt3" path="res://cancel_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="6_4aeh2"]
+[ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="7_msueu"]
+[ext_resource type="Script" path="res://Black2.gd" id="8_iyvup"]
+[ext_resource type="Shader" path="res://dis.gdshader" id="9_hixr7"]
+[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="10_4kvbf"]
+[ext_resource type="Script" path="res://Black3.gd" id="10_soiar"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e2fqf"]
+noise_type = 2
+seed = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6bj6a"]
+seamless = true
+seamless_blend_skirt = 0.063
+noise = SubResource("FastNoiseLite_e2fqf")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rocpd"]
+noise_type = 2
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fxjix"]
+seamless = true
+noise = SubResource("FastNoiseLite_rocpd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01obk"]
+shader = ExtResource("9_hixr7")
+shader_parameter/scroll1 = Vector2(0.05, 0.05)
+shader_parameter/scroll2 = Vector2(0.05, 0.05)
+shader_parameter/distortion_strength = 0.2
+shader_parameter/tone_color = Color(0.0980392, 0.0980392, 0.0980392, 0.592157)
+shader_parameter/top_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+shader_parameter/light_start = 0.4
+shader_parameter/light_end = 0.4
+shader_parameter/noise1 = SubResource("NoiseTexture2D_6bj6a")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_fxjix")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0mgdj"]
+size = Vector2(2000, 1200)
+orientation = 2
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 222.0
+offset_top = 192.0
+offset_right = 222.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.607807, 0.607807)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_r2tmy")
+
+[node name="Untitled(1)" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(585.712, 215.529)
+texture = ExtResource("2_h1edb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -348.795
+offset_top = -383.113
+offset_right = -228.795
+offset_bottom = -247.113
+grow_vertical = 0
+scale = Vector2(3.45883, 3.45883)
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Start"
+icon = ExtResource("3_dral5")
+alignment = 0
+expand_icon = true
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Controls"
+icon = ExtResource("4_rnquh")
+alignment = 0
+expand_icon = true
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Credits"
+icon = ExtResource("5_hoj5k")
+alignment = 0
+expand_icon = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Quit Game"
+icon = ExtResource("6_4aeh2")
+alignment = 0
+expand_icon = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 646.587
+offset_top = 409.669
+offset_right = 730.587
+offset_bottom = 440.669
+scale = Vector2(10, 10)
+text = "The Jarsio"
+
+[node name="Black" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.741176)
+z_index = -1
+position = Vector2(562.679, 227.046)
+scale = Vector2(6.57014, 6.82733)
+texture = ExtResource("7_msueu")
+
+[node name="Black2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.952941)
+z_index = -1
+position = Vector2(562.679, 227.046)
+scale = Vector2(6.57014, 6.82733)
+texture = ExtResource("7_msueu")
+script = ExtResource("8_iyvup")
+
+[node name="Timer" type="Timer" parent="Black2"]
+
+[node name="Timer2" type="Timer" parent="Black2"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+z_index = 4
+material = SubResource("ShaderMaterial_01obk")
+position = Vector2(587, 343)
+scale = Vector2(0.607807, 0.607807)
+mesh = SubResource("PlaneMesh_0mgdj")
+texture = ExtResource("2_h1edb")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 11
+
+[node name="Black3" type="Sprite2D" parent="CanvasLayer2"]
+z_index = 9
+position = Vector2(593, 367)
+scale = Vector2(0.745833, 1.04259)
+texture = ExtResource("10_4kvbf")
+script = ExtResource("10_soiar")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="CanvasLayer2/Black3" method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="CanvasLayer2/Black3" method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="CanvasLayer2/Black3" method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="CanvasLayer2/Black3" method="_on_quit_pressed"]
+[connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Black2/Timer2" to="Black2" method="_on_timer_2_timeout"]

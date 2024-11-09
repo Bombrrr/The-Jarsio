@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://4m0rjgnh442o"]
+
+[ext_resource type="Script" path="res://Player2.gd" id="1_wux3w"]
+[ext_resource type="Script" path="res://cam.gd" id="2_5g87e"]
+[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="3_kr6qb"]
+[ext_resource type="Texture2D" uid="uid://crjsk2vbbwf8" path="res://Jarsio World Map.png" id="4_p4xio"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pu2dj"]
+height = 1.7
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a0gjg"]
+
+[sub_resource type="Sky" id="Sky_0t0x2"]
+sky_material = SubResource("ProceduralSkyMaterial_a0gjg")
+
+[sub_resource type="Environment" id="Environment_fo5o5"]
+background_mode = 2
+sky = SubResource("Sky_0t0x2")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(19.4874, 0, 0, 0, 0.864351, 0, 0, 0, 18.1069, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(19.4874, 0, 0, 0, 3.86698, 0, 0, 0, 0.784732, 0, 1.55632, 8.43091)
+use_collision = true
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.236457, -0.41359)
+script = ExtResource("1_wux3w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.782066, -0.0017757)
+shape = SubResource("CapsuleShape3D_pu2dj")
+
+[node name="Neck" type="Node3D" parent="Player"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.808094, 0)
+fov = 70.0
+script = ExtResource("2_5g87e")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fo5o5")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
+pixel_size = 0.0025
+texture = ExtResource("3_kr6qb")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 2, 8)
+pixel_size = 0.0025
+texture = ExtResource("4_p4xio")

@@ -1,0 +1,380 @@
+[gd_scene load_steps=28 format=3 uid="uid://cp7jha4fbenxf"]
+
+[ext_resource type="Script" path="res://Jarsio.gd" id="1_uejb2"]
+[ext_resource type="Script" path="res://CharacterMovement.gd" id="2_7wkcn"]
+[ext_resource type="Script" path="res://cam.gd" id="3_llhdt"]
+[ext_resource type="PackedScene" uid="uid://dppjoye7xt1so" path="res://finalarmt.glb" id="3_q0xw4"]
+[ext_resource type="Script" path="res://hand.gd" id="4_7cgpe"]
+[ext_resource type="Script" path="res://AudioStreamPlayer.gd" id="5_af5hf"]
+[ext_resource type="Script" path="res://JarsioNav.gd" id="6_cgs5a"]
+[ext_resource type="PackedScene" uid="uid://cgo5qjbqmd0e" path="res://jarwalllk.glb" id="7_b2bs1"]
+[ext_resource type="Script" path="res://JarsioAnim.gd" id="8_4tn88"]
+[ext_resource type="Script" path="res://ProgressBar.gd" id="9_aylal"]
+[ext_resource type="Texture2D" uid="uid://be4ql4aa1pr8e" path="res://mic_24dp_FFFFFF_FILL0_wght400_GRAD200_opsz24.svg" id="10_wtwym"]
+[ext_resource type="Script" path="res://Black31.gd" id="11_s4gpb"]
+[ext_resource type="Script" path="res://Roof.gd" id="12_vx8tu"]
+[ext_resource type="Script" path="res://pause.gd" id="15_wojk0"]
+[ext_resource type="Script" path="res://fov.gd" id="16_53kp2"]
+[ext_resource type="Script" path="res://Node3.gd" id="16_hdbop"]
+[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="17_ivf75"]
+[ext_resource type="Script" path="res://fovv.gd" id="17_jc313"]
+[ext_resource type="Script" path="res://Button3.gd" id="19_qv23b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
+height = 1.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_le4f3"]
+height = 1.40655
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_ggsek"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bidp1"]
+height = 1.82473
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60ovy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8nsk"]
+bg_color = Color(0.345098, 0.345098, 0.345098, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gdfcd"]
+vertices = PackedVector3Array(-121.078, 1.17627, -120.46, -128.578, 1.17627, -120.46, -128.578, 1.17627, -113.21, -121.078, 1.17627, -120.46, -128.578, 1.17627, -113.21, -128.578, 1.17627, -105.71, -113.328, 1.17627, -120.46, -121.078, 1.17627, -120.46, -128.578, 1.17627, -105.71, -128.578, 1.17627, -98.4602, -44.3279, 1.17627, -120.46, -52.0779, 1.17627, -120.46, -128.578, 1.17627, -38.9602, -128.578, 1.17627, -31.4602, -105.828, 1.17627, -120.46, -113.328, 1.17627, -120.46, -128.578, 1.17627, -98.4602, -128.578, 1.17627, -90.9602, -7.3279, 1.17627, -2.96022, -5.5779, 1.17627, -3.21022, -5.8279, 1.17627, -120.46, -13.5779, 1.17627, -120.46, -98.0779, 1.17627, -120.46, -105.828, 1.17627, -120.46, -128.578, 1.17627, -90.9602, -128.578, 1.17627, -83.7102, -128.578, 1.17627, -24.2102, -128.578, 1.17627, -16.7102, -7.3279, 1.17627, -1.46022, -90.5779, 1.17627, -120.46, -98.0779, 1.17627, -120.46, -128.578, 1.17627, -83.7102, -128.578, 1.17627, -76.2102, -7.3279, 1.17627, -2.96022, -13.5779, 1.17627, -120.46, -21.3279, 1.17627, -120.46, -82.8279, 1.17627, -120.46, -90.5779, 1.17627, -120.46, -128.578, 1.17627, -76.2102, -128.578, 1.17627, -68.7102, -7.3279, 1.17627, -2.96022, -21.3279, 1.17627, -120.46, -29.0779, 1.17627, -120.46, -75.0779, 1.17627, -120.46, -82.8279, 1.17627, -120.46, -128.578, 1.17627, -68.7102, -128.578, 1.17627, -61.2102, -7.3279, 1.17627, -1.46022, -7.3279, 1.17627, -2.96022, -29.0779, 1.17627, -120.46, -36.5779, 1.17627, -120.46, -67.3279, 1.17627, -120.46, -75.0779, 1.17627, -120.46, -128.578, 1.17627, -61.2102, -128.578, 1.17627, -53.9602, -128.578, 1.17627, -9.21022, -128.578, 1.17627, -1.71022, -7.3279, 1.17627, -1.46022, -59.8279, 1.17627, -120.46, -67.3279, 1.17627, -120.46, -128.578, 1.17627, -53.9602, -128.578, 1.17627, -46.4602, -128.578, 1.17627, -16.7102, -128.578, 1.17627, -9.21022, -7.3279, 1.17627, -1.46022, -52.0779, 1.17627, -120.46, -59.8279, 1.17627, -120.46, -128.578, 1.17627, -46.4602, -128.578, 1.17627, -38.9602, -7.3279, 1.17627, -1.46022, -36.5779, 1.17627, -120.46, -44.3279, 1.17627, -120.46, -128.578, 1.17627, -31.4602, -128.578, 1.17627, -24.2102, -5.5779, 1.17627, -3.21022, -0.0778961, 1.17627, -3.21022, 0.172104, 1.17627, -120.46, -5.8279, 1.17627, -120.46, 122.922, 1.17627, -113.21, 122.922, 1.17627, -120.46, 115.172, 1.17627, -120.46, 122.922, 1.17627, -105.71, 122.922, 1.17627, -113.21, 115.172, 1.17627, -120.46, 122.922, 1.17627, -105.71, 115.172, 1.17627, -120.46, 107.422, 1.17627, -120.46, 122.922, 1.17627, -98.4602, 0.172104, 1.17627, -120.46, -0.0778961, 1.17627, -3.21022, 1.4221, 1.17627, -3.21022, 7.6721, 1.17627, -120.46, 122.922, 1.17627, -98.4602, 107.422, 1.17627, -120.46, 99.6721, 1.17627, -120.46, 122.922, 1.17627, -90.9602, 38.1721, 1.17627, -120.46, 30.6721, 1.17627, -120.46, 1.4221, 1.17627, -3.21022, 122.922, 1.17627, -24.2102, 122.922, 1.17627, -31.4602, 122.922, 1.17627, -90.9602, 99.6721, 1.17627, -120.46, 92.1721, 1.17627, -120.46, 122.922, 1.17627, -83.7102, 122.922, 1.17627, -38.9602, 45.9221, 1.17627, -120.46, 38.1721, 1.17627, -120.46, 122.922, 1.17627, -31.4602, 122.922, 1.17627, -83.7102, 92.1721, 1.17627, -120.46, 84.4221, 1.17627, -120.46, 122.922, 1.17627, -76.2102, 15.4221, 1.17627, -120.46, 7.6721, 1.17627, -120.46, 1.4221, 1.17627, -3.21022, 122.922, 1.17627, -76.2102, 84.4221, 1.17627, -120.46, 76.6721, 1.17627, -120.46, 122.922, 1.17627, -68.7102, 22.9221, 1.17627, -120.46, 15.4221, 1.17627, -120.46, 1.4221, 1.17627, -3.21022, 122.922, 1.17627, -68.7102, 76.6721, 1.17627, -120.46, 68.9221, 1.17627, -120.46, 122.922, 1.17627, -61.2102, 30.6721, 1.17627, -120.46, 22.9221, 1.17627, -120.46, 1.4221, 1.17627, -3.21022, 122.922, 1.17627, -61.2102, 68.9221, 1.17627, -120.46, 61.4221, 1.17627, -120.46, 122.922, 1.17627, -53.9602, 1.6721, 1.17627, -1.46022, 122.922, 1.17627, -1.71022, 122.922, 1.17627, -9.21022, 122.922, 1.17627, -53.9602, 61.4221, 1.17627, -120.46, 53.6721, 1.17627, -120.46, 122.922, 1.17627, -46.4602, 1.4221, 1.17627, -3.21022, 1.6721, 1.17627, -1.46022, 122.922, 1.17627, -9.21022, 122.922, 1.17627, -16.7102, 122.922, 1.17627, -46.4602, 53.6721, 1.17627, -120.46, 45.9221, 1.17627, -120.46, 122.922, 1.17627, -38.9602, 1.4221, 1.17627, -3.21022, 122.922, 1.17627, -16.7102, 122.922, 1.17627, -24.2102, -128.578, 1.17627, 1.28978, -7.3279, 1.17627, 1.03978, -7.3279, 1.17627, -1.46022, -128.578, 1.17627, -1.71022, 1.6721, 1.17627, -1.46022, 1.6721, 1.17627, 1.03978, 122.922, 1.17627, 1.28978, 122.922, 1.17627, -1.71022, -5.3279, 1.17627, -1.21022, -5.3279, 1.17627, 0.78978, -0.327896, 1.17627, 0.78978, -0.327896, 1.17627, -1.21022, -128.578, 1.17627, 116.54, -128.578, 1.17627, 124.29, -121.078, 1.17627, 124.29, -128.578, 1.17627, 116.54, -121.078, 1.17627, 124.29, -113.328, 1.17627, 124.29, -128.578, 1.17627, 108.79, -36.0779, 1.17627, 124.29, -28.3279, 1.17627, 124.29, -7.0779, 1.17627, 2.78978, -128.578, 1.17627, 108.79, -113.328, 1.17627, 124.29, -105.578, 1.17627, 124.29, -128.578, 1.17627, 101.04, -7.3279, 1.17627, 1.03978, -128.578, 1.17627, 1.28978, -128.578, 1.17627, 8.78978, -128.578, 1.17627, 93.5398, -128.578, 1.17627, 101.04, -105.578, 1.17627, 124.29, -97.8279, 1.17627, 124.29, -5.0779, 1.17627, 124.29, -5.0779, 1.17627, 2.78978, -7.0779, 1.17627, 2.78978, -12.8279, 1.17627, 124.29, -128.578, 1.17627, 85.7898, -128.578, 1.17627, 93.5398, -97.8279, 1.17627, 124.29, -90.0779, 1.17627, 124.29, -7.0779, 1.17627, 2.78978, -128.578, 1.17627, 24.2898, -128.578, 1.17627, 32.0398, -128.578, 1.17627, 78.0398, -128.578, 1.17627, 85.7898, -90.0779, 1.17627, 124.29, -82.3279, 1.17627, 124.29, -7.0779, 1.17627, 2.78978, -7.3279, 1.17627, 1.03978, -128.578, 1.17627, 8.78978, -128.578, 1.17627, 16.5398, -128.578, 1.17627, 70.2898, -128.578, 1.17627, 78.0398, -82.3279, 1.17627, 124.29, -74.5779, 1.17627, 124.29, -20.5779, 1.17627, 124.29, -12.8279, 1.17627, 124.29, -7.0779, 1.17627, 2.78978, -128.578, 1.17627, 62.7898, -128.578, 1.17627, 70.2898, -74.5779, 1.17627, 124.29, -66.8279, 1.17627, 124.29, -128.578, 1.17627, 32.0398, -128.578, 1.17627, 39.5398, -43.8279, 1.17627, 124.29, -36.0779, 1.17627, 124.29, -7.0779, 1.17627, 2.78978, -128.578, 1.17627, 62.7898, -66.8279, 1.17627, 124.29, -59.3279, 1.17627, 124.29, -128.578, 1.17627, 55.0398, -28.3279, 1.17627, 124.29, -20.5779, 1.17627, 124.29, -7.0779, 1.17627, 2.78978, -128.578, 1.17627, 47.2898, -128.578, 1.17627, 55.0398, -59.3279, 1.17627, 124.29, -51.5779, 1.17627, 124.29, -7.0779, 1.17627, 2.78978, -128.578, 1.17627, 16.5398, -128.578, 1.17627, 24.2898, -128.578, 1.17627, 39.5398, -128.578, 1.17627, 47.2898, -51.5779, 1.17627, 124.29, -43.8279, 1.17627, 124.29, 115.172, 1.17627, 124.29, 122.922, 1.17627, 124.29, 122.922, 1.17627, 116.54, 107.422, 1.17627, 124.29, 115.172, 1.17627, 124.29, 122.922, 1.17627, 116.54, 122.922, 1.17627, 108.79, 1.4221, 1.17627, 2.78978, 22.4221, 1.17627, 124.29, 30.1721, 1.17627, 124.29, 99.6721, 1.17627, 124.29, 107.422, 1.17627, 124.29, 122.922, 1.17627, 108.79, 122.922, 1.17627, 101.04, 122.922, 1.17627, 8.78978, 122.922, 1.17627, 1.28978, 1.6721, 1.17627, 1.03978, 99.6721, 1.17627, 124.29, 122.922, 1.17627, 101.04, 122.922, 1.17627, 93.5398, 91.9221, 1.17627, 124.29, 1.4221, 1.17627, 2.78978, -0.577896, 1.17627, 2.78978, -0.577896, 1.17627, 124.29, 6.9221, 1.17627, 124.29, 91.9221, 1.17627, 124.29, 122.922, 1.17627, 93.5398, 122.922, 1.17627, 85.7898, 84.1721, 1.17627, 124.29, 122.922, 1.17627, 32.0398, 122.922, 1.17627, 24.2898, 1.4221, 1.17627, 2.78978, 84.1721, 1.17627, 124.29, 122.922, 1.17627, 85.7898, 122.922, 1.17627, 78.0398, 76.4221, 1.17627, 124.29, 122.922, 1.17627, 8.78978, 1.6721, 1.17627, 1.03978, 1.4221, 1.17627, 2.78978, 122.922, 1.17627, 16.5398, 76.4221, 1.17627, 124.29, 122.922, 1.17627, 78.0398, 122.922, 1.17627, 70.2898, 68.6721, 1.17627, 124.29, 1.4221, 1.17627, 2.78978, 6.9221, 1.17627, 124.29, 14.6721, 1.17627, 124.29, 68.6721, 1.17627, 124.29, 122.922, 1.17627, 70.2898, 122.922, 1.17627, 62.7898, 61.1721, 1.17627, 124.29, 37.9221, 1.17627, 124.29, 122.922, 1.17627, 39.5398, 122.922, 1.17627, 32.0398, 1.4221, 1.17627, 2.78978, 30.1721, 1.17627, 124.29, 61.1721, 1.17627, 124.29, 122.922, 1.17627, 62.7898, 122.922, 1.17627, 55.0398, 53.4221, 1.17627, 124.29, 1.4221, 1.17627, 2.78978, 14.6721, 1.17627, 124.29, 22.4221, 1.17627, 124.29, 53.4221, 1.17627, 124.29, 122.922, 1.17627, 55.0398, 122.922, 1.17627, 47.2898, 45.6721, 1.17627, 124.29, 122.922, 1.17627, 24.2898, 122.922, 1.17627, 16.5398, 1.4221, 1.17627, 2.78978, 45.6721, 1.17627, 124.29, 122.922, 1.17627, 47.2898, 122.922, 1.17627, 39.5398, 37.9221, 1.17627, 124.29, -5.0779, 1.17627, 124.29, -0.577896, 1.17627, 124.29, -0.577896, 1.17627, 2.78978, -5.0779, 1.17627, 2.78978)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 10), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(28, 27, 26), PackedInt32Array(30, 29, 31), PackedInt32Array(31, 29, 32), PackedInt32Array(35, 34, 33), PackedInt32Array(37, 36, 38), PackedInt32Array(38, 36, 39), PackedInt32Array(42, 41, 40), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 46), PackedInt32Array(48, 47, 49), PackedInt32Array(49, 47, 50), PackedInt32Array(53, 52, 54), PackedInt32Array(54, 52, 51), PackedInt32Array(57, 56, 55), PackedInt32Array(59, 58, 60), PackedInt32Array(60, 58, 61), PackedInt32Array(64, 63, 62), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 65), PackedInt32Array(70, 69, 71), PackedInt32Array(71, 69, 72), PackedInt32Array(72, 69, 73), PackedInt32Array(74, 77, 75), PackedInt32Array(75, 77, 76), PackedInt32Array(80, 79, 78), PackedInt32Array(83, 82, 81), PackedInt32Array(85, 84, 86), PackedInt32Array(86, 84, 87), PackedInt32Array(89, 88, 90), PackedInt32Array(90, 88, 91), PackedInt32Array(93, 92, 94), PackedInt32Array(94, 92, 95), PackedInt32Array(97, 96, 98), PackedInt32Array(98, 96, 100), PackedInt32Array(98, 100, 99), PackedInt32Array(102, 101, 103), PackedInt32Array(103, 101, 104), PackedInt32Array(105, 108, 106), PackedInt32Array(106, 108, 107), PackedInt32Array(110, 109, 111), PackedInt32Array(111, 109, 112), PackedInt32Array(115, 114, 113), PackedInt32Array(117, 116, 118), PackedInt32Array(118, 116, 119), PackedInt32Array(122, 121, 120), PackedInt32Array(124, 123, 125), PackedInt32Array(125, 123, 126), PackedInt32Array(129, 128, 127), PackedInt32Array(131, 130, 132), PackedInt32Array(132, 130, 133), PackedInt32Array(134, 136, 135), PackedInt32Array(137, 140, 138), PackedInt32Array(138, 140, 139), PackedInt32Array(142, 141, 143), PackedInt32Array(143, 141, 144), PackedInt32Array(145, 148, 146), PackedInt32Array(146, 148, 147), PackedInt32Array(151, 150, 149), PackedInt32Array(153, 152, 154), PackedInt32Array(154, 152, 155), PackedInt32Array(156, 159, 157), PackedInt32Array(157, 159, 158), PackedInt32Array(163, 162, 160), PackedInt32Array(160, 162, 161), PackedInt32Array(166, 165, 164), PackedInt32Array(168, 167, 169), PackedInt32Array(169, 167, 170), PackedInt32Array(173, 172, 171), PackedInt32Array(175, 174, 176), PackedInt32Array(176, 174, 177), PackedInt32Array(178, 180, 179), PackedInt32Array(182, 181, 183), PackedInt32Array(183, 181, 184), PackedInt32Array(186, 185, 187), PackedInt32Array(187, 185, 188), PackedInt32Array(190, 189, 191), PackedInt32Array(191, 189, 192), PackedInt32Array(195, 194, 193), PackedInt32Array(197, 196, 198), PackedInt32Array(198, 196, 199), PackedInt32Array(201, 200, 202), PackedInt32Array(202, 200, 203), PackedInt32Array(205, 204, 206), PackedInt32Array(206, 204, 207), PackedInt32Array(210, 209, 208), PackedInt32Array(212, 211, 213), PackedInt32Array(213, 211, 214), PackedInt32Array(216, 215, 217), PackedInt32Array(217, 215, 218), PackedInt32Array(218, 215, 219), PackedInt32Array(221, 220, 222), PackedInt32Array(222, 220, 223), PackedInt32Array(226, 225, 224), PackedInt32Array(228, 227, 229), PackedInt32Array(229, 227, 230), PackedInt32Array(233, 232, 231), PackedInt32Array(235, 234, 236), PackedInt32Array(236, 234, 237), PackedInt32Array(240, 239, 238), PackedInt32Array(242, 241, 243), PackedInt32Array(243, 241, 244), PackedInt32Array(247, 246, 245), PackedInt32Array(249, 248, 250), PackedInt32Array(250, 248, 251), PackedInt32Array(254, 253, 252), PackedInt32Array(256, 255, 257), PackedInt32Array(257, 255, 258), PackedInt32Array(260, 259, 261), PackedInt32Array(261, 259, 262), PackedInt32Array(264, 263, 265), PackedInt32Array(265, 263, 266), PackedInt32Array(269, 268, 267), PackedInt32Array(271, 270, 272), PackedInt32Array(272, 270, 273), PackedInt32Array(275, 274, 276), PackedInt32Array(276, 274, 277), PackedInt32Array(279, 278, 280), PackedInt32Array(280, 278, 281), PackedInt32Array(284, 283, 282), PackedInt32Array(286, 285, 287), PackedInt32Array(287, 285, 288), PackedInt32Array(290, 289, 291), PackedInt32Array(291, 289, 293), PackedInt32Array(291, 293, 292), PackedInt32Array(295, 294, 296), PackedInt32Array(296, 294, 297), PackedInt32Array(300, 299, 298), PackedInt32Array(302, 301, 303), PackedInt32Array(303, 301, 304), PackedInt32Array(307, 306, 305), PackedInt32Array(309, 308, 310), PackedInt32Array(310, 308, 311), PackedInt32Array(315, 314, 312), PackedInt32Array(312, 314, 313)]
+
+[sub_resource type="Environment" id="Environment_ciuuj"]
+ambient_light_source = 3
+ambient_light_energy = 0.0
+fog_light_energy = 0.1
+fog_density = 0.6084
+fog_height = -1024.0
+fog_height_density = 16.0
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_uejb2")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99047, 0.236457, -0.41359)
+script = ExtResource("2_7wkcn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.782066, -0.0017757)
+shape = SubResource("CapsuleShape3D_668xl")
+
+[node name="Neck" type="Node3D" parent="Player"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Player/Neck"]
+transform = Transform3D(1, 0, 0, 0, 0.993807, 0.111122, 0, -0.111122, 0.993807, -0.214977, 0.840472, -0.0411246)
+light_color = Color(0.733333, 0.701961, 0.552941, 1)
+light_energy = 4.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 8.0
+shadow_enabled = true
+shadow_blur = 3.727
+spot_range = 6.28183
+spot_angle = 28.1267
+
+[node name="finalarmt" parent="Player/Neck" instance=ExtResource("3_q0xw4")]
+transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, -0.729848, 0.00299597)
+script = ExtResource("4_7cgpe")
+
+[node name="Camera3D" type="Camera3D" parent="Player/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.808094, 0)
+fov = 70.0
+script = ExtResource("3_llhdt")
+
+[node name="are" type="Area3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84005, -0.0834785)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/are"]
+shape = SubResource("CapsuleShape3D_le4f3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843663, 0)
+visible = false
+omni_range = 4096.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = SubResource("AudioStreamMicrophone_ggsek")
+autoplay = true
+bus = &"Record"
+script = ExtResource("5_af5hf")
+
+[node name="Jarsio" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -10.196, 1.36088, -8.056)
+script = ExtResource("6_cgs5a")
+
+[node name="Neck" type="Node3D" parent="Jarsio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317309, 1.19209e-07, -2.81334e-05)
+
+[node name="jarwalllk" parent="Jarsio/Neck" instance=ExtResource("7_b2bs1")]
+transform = Transform3D(-1.31134e-09, 0, 0.03, 0, 0.03, 0, -0.03, 0, -1.31134e-09, 0, -0.909391, 0)
+script = ExtResource("8_4tn88")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Jarsio"]
+
+[node name="Area3D" type="Area3D" parent="Jarsio"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jarsio/Area3D"]
+shape = SubResource("CapsuleShape3D_le4f3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jarsio"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_bidp1")
+
+[node name="Marker3D" type="Marker3D" parent="Jarsio"]
+transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, 0, 0, 0)
+top_level = true
+gizmo_extents = 6.99
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Jarsio"]
+visible = false
+omni_range = 4096.0
+
+[node name="Timer" type="Timer" parent="Jarsio"]
+wait_time = 20.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00970388, 0.999953, 0, -0.999953, -0.00970388, 0, 146.71, 0)
+light_energy = 2.194
+light_indirect_energy = 16.0
+editor_only = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node"]
+
+[node name="Control" type="Control" parent="Node/CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.003
+anchor_bottom = 1.0
+offset_right = -0.456055
+offset_bottom = -1.0
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Node/CanvasLayer/Control"]
+layout_mode = 2
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -485.0
+offset_right = -32.0
+offset_bottom = -96.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_60ovy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c8nsk")
+value = 5.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("9_aylal")
+
+[node name="TextureRect" type="TextureRect" parent="Node/CanvasLayer/Control"]
+modulate = Color(0.443137, 0, 0.0313726, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0001
+offset_top = -84.0001
+offset_right = 2312.0
+offset_bottom = 2316.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.03, 0.03)
+mouse_filter = 2
+texture = ExtResource("10_wtwym")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Roof" type="CSGBox3D" parent="World"]
+transform = Transform3D(5048.12, 0, 0, 0, 1, 0, 0, 0, 7368.97, -2.94259, 2.44902, 1.86786)
+visible = false
+script = ExtResource("12_vx8tu")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="World"]
+navigation_mesh = SubResource("NavigationMesh_gdfcd")
+
+[node name="Floor" type="CSGBox3D" parent="World/NavigationRegion3D"]
+transform = Transform3D(252.406, 0, 0, 0, 1, 0, 0, 0, 245.632, -2.8749, 0.176273, 1.85578)
+use_collision = true
+
+[node name="Walls" type="Node" parent="World/NavigationRegion3D"]
+
+[node name="Room" type="Node" parent="World/NavigationRegion3D/Walls"]
+
+[node name="Wall" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Room"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, -2.87647, 1.28762, 1.8318)
+use_collision = true
+
+[node name="Wall3" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Room"]
+transform = Transform3D(-1.92329e-07, 0, 0.716716, 0, 1.87831, 0, -4.39997, 0, -3.13286e-08, 0.622534, 1.28762, -0.23165)
+use_collision = true
+
+[node name="Wall4" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Room"]
+transform = Transform3D(-1.92329e-07, 0, 0.716716, 0, 1.87831, 0, -4.39997, 0, -3.13286e-08, -6.383, 2.148, -0.232)
+use_collision = true
+
+[node name="Wall2" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Room"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, -2.87647, 1.28762, -2.1409)
+use_collision = true
+
+[node name="Cave" type="Node" parent="World/NavigationRegion3D/Walls"]
+
+[node name="Wall5" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(6.69514, 0, 0.358358, 0, 1.87831, 0, -3.86544, 0, 0.620694, -10.4727, 1.28762, 4.67037)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall6" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(6.69514, 0, 0.358358, 0, 1.87831, 0, -3.86544, 0, 0.620694, -10.4727, 1.28762, 0.525809)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Node2" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("15_wojk0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node2"]
+process_mode = 2
+layer = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2/CanvasLayer"]
+offset_left = 11.0
+offset_top = 31.0
+offset_right = 345.0
+offset_bottom = 202.0
+scale = Vector2(3.4, 3.4)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Controls"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Control name" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="fc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+layout_mode = 2
+text = "Move Forward"
+
+[node name="bc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+layout_mode = 2
+text = "Move Backward"
+
+[node name="ec" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+layout_mode = 2
+text = "Cool Emote"
+
+[node name="qc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+layout_mode = 2
+text = "Main/Pause Menu"
+
+[node name="Control key" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="fc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+layout_mode = 2
+text = "W"
+
+[node name="bc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+layout_mode = 2
+text = "S"
+
+[node name="ec" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+layout_mode = 2
+text = "F"
+
+[node name="qc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+layout_mode = 2
+text = "esc"
+
+[node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Resume Game"
+
+[node name="Button2" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Return To Menu
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FOV"
+
+[node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+button_mask = 4
+script = ExtResource("16_53kp2")
+
+[node name="HSlider" type="HSlider" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+min_value = 60.0
+max_value = 120.0
+value = 60.0
+script = ExtResource("17_jc313")
+
+[node name="Button3" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "DisDevMod"
+script = ExtResource("19_qv23b")
+
+[node name="Node" type="Node" parent="Node2"]
+process_mode = 3
+script = ExtResource("16_hdbop")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Node2/Node"]
+layer = 4
+
+[node name="Black3" type="Sprite2D" parent="Node2/Node/CanvasLayer"]
+process_mode = 3
+top_level = true
+z_index = 10
+position = Vector2(592.5, 303)
+scale = Vector2(0.879688, 0.987037)
+texture = ExtResource("17_ivf75")
+script = ExtResource("11_s4gpb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ciuuj")
+
+[connection signal="noise" from="." to="Jarsio" method="_on_world_noise"]
+[connection signal="noise" from="." to="Node/CanvasLayer/Control/ProgressBar" method="_on_world_noise"]
+[connection signal="area_entered" from="Player/are" to="." method="_on_area_3d_area_entered"]
+[connection signal="db" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_db"]
+[connection signal="db" from="AudioStreamPlayer" to="Node/CanvasLayer/Control/ProgressBar" method="_on_audio_stream_player_db"]
+[connection signal="area_entered" from="Jarsio/Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="timeout" from="Jarsio/Timer" to="Jarsio" method="_on_timer_timeout"]
+[connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button" to="Node2" method="_on_button_pressed"]
+[connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button2" to="Node2/Node/CanvasLayer/Black3" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Button3" to="Player" method="_on_button_3_pressed"]
+[connection signal="toggled" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Button" to="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" method="_on_toggled"]
+[connection signal="fov" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" to="Player/Neck/Camera3D" method="_on_h_slider_fov"]
+[connection signal="fov" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" to="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Button" method="_on_h_slider_fov"]
+[connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button3" to="Node2/Node" method="_on_button_3_pressed"]
+[connection signal="grav" from="Node2/Node" to="Player" method="_on_node_grav"]
