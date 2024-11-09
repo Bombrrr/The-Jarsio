@@ -64,7 +64,7 @@ shape = SubResource("CapsuleShape3D_668xl")
 [node name="Neck" type="Node3D" parent="Player"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Neck"]
-transform = Transform3D(1, 0, 0, 0, 0.993807, 0.111122, 0, -0.111122, 0.993807, -0.214977, 0.840472, -0.0411246)
+transform = Transform3D(1, 0, 0, 0, 0.993807, 0.111122, 0, -0.111122, 0.993807, -0.218768, 0.840472, 0.126769)
 light_color = Color(0.733333, 0.701961, 0.552941, 1)
 light_energy = 4.0
 light_indirect_energy = 0.0
