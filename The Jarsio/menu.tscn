@@ -1,11 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cl356nit6ykvv"]
+[gd_scene load_steps=15 format=3 uid="uid://cl356nit6ykvv"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_r2tmy"]
 [ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_h1edb"]
-[ext_resource type="Texture2D" uid="uid://c2jxxx2unoumb" path="res://sports_esports_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="3_dral5"]
-[ext_resource type="Texture2D" uid="uid://cqatvlfjwym7u" path="res://keyboard_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="4_rnquh"]
-[ext_resource type="Texture2D" uid="uid://bxh2d1gp8l5a3" path="res://credit_card_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="5_hoj5k"]
-[ext_resource type="Texture2D" uid="uid://b53qxrq1yivt3" path="res://cancel_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="6_4aeh2"]
+[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="3_32mg2"]
 [ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="7_msueu"]
 [ext_resource type="Script" path="res://Black2.gd" id="8_iyvup"]
 [ext_resource type="Shader" path="res://dis.gdshader" id="9_hixr7"]
@@ -71,53 +68,58 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -348.795
-offset_top = -383.113
-offset_right = -228.795
-offset_bottom = -247.113
+offset_left = -330.697
+offset_top = -392.985
+offset_right = 55.3029
+offset_bottom = 71.0151
 grow_vertical = 0
-scale = Vector2(3.45883, 3.45883)
+theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("3_32mg2")
+theme_override_font_sizes/font_size = 100
 text = "Start"
-icon = ExtResource("3_dral5")
 alignment = 0
 expand_icon = true
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("3_32mg2")
+theme_override_font_sizes/font_size = 100
 text = "Controls"
-icon = ExtResource("4_rnquh")
 alignment = 0
 expand_icon = true
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("3_32mg2")
+theme_override_font_sizes/font_size = 100
 text = "Credits"
-icon = ExtResource("5_hoj5k")
 alignment = 0
 expand_icon = true
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("3_32mg2")
+theme_override_font_sizes/font_size = 100
 text = "Quit Game"
-icon = ExtResource("6_4aeh2")
 alignment = 0
 expand_icon = true
 
-[node name="Button" type="Button" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 646.587
-offset_top = 409.669
-offset_right = 730.587
-offset_bottom = 440.669
-scale = Vector2(10, 10)
-text = "The Jarsio"
+offset_left = 335.633
+offset_top = 391.572
+offset_right = 1490.63
+offset_bottom = 708.572
+theme = ExtResource("3_32mg2")
+theme_override_font_sizes/font_size = 300
+text = "THE JARSIO"
 
 [node name="Black" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.741176)
@@ -153,6 +155,7 @@ texture = ExtResource("2_h1edb")
 layer = 11
 
 [node name="Black3" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
 z_index = 9
 position = Vector2(593, 367)
 scale = Vector2(0.745833, 1.04259)
