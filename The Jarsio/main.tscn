@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://cp7jha4fbenxf"]
+[gd_scene load_steps=30 format=3 uid="uid://cp7jha4fbenxf"]
 
 [ext_resource type="Script" path="res://Jarsio.gd" id="1_uejb2"]
 [ext_resource type="Script" path="res://CharacterMovement.gd" id="2_7wkcn"]
+[ext_resource type="Script" path="res://SpotLight3D.gd" id="3_3grfh"]
 [ext_resource type="Script" path="res://cam.gd" id="3_llhdt"]
 [ext_resource type="PackedScene" uid="uid://dppjoye7xt1so" path="res://finalarmt.glb" id="3_q0xw4"]
 [ext_resource type="Script" path="res://hand.gd" id="4_7cgpe"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="17_ivf75"]
 [ext_resource type="Script" path="res://fovv.gd" id="17_jc313"]
 [ext_resource type="Script" path="res://Button3.gd" id="19_qv23b"]
+[ext_resource type="PackedScene" uid="uid://vevgfmh6dcgm" path="res://Machine.glb" id="20_75qnq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7
@@ -64,7 +66,7 @@ shape = SubResource("CapsuleShape3D_668xl")
 [node name="Neck" type="Node3D" parent="Player"]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Neck"]
-transform = Transform3D(1, 0, 0, 0, 0.993807, 0.111122, 0, -0.111122, 0.993807, -0.218768, 0.840472, 0.126769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218768, 0.79581, 0.094081)
 light_color = Color(0.733333, 0.701961, 0.552941, 1)
 light_energy = 4.0
 light_indirect_energy = 0.0
@@ -73,6 +75,7 @@ shadow_enabled = true
 shadow_blur = 3.727
 spot_range = 6.28183
 spot_angle = 28.1267
+script = ExtResource("3_3grfh")
 
 [node name="finalarmt" parent="Player/Neck" instance=ExtResource("3_q0xw4")]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, -0.729848, 0.00299597)
@@ -362,6 +365,9 @@ script = ExtResource("11_s4gpb")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ciuuj")
+
+[node name="Machine" parent="." instance=ExtResource("20_75qnq")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.237463, 0.917481, -1.27874)
 
 [connection signal="noise" from="." to="Jarsio" method="_on_world_noise"]
 [connection signal="noise" from="." to="Node/CanvasLayer/Control/ProgressBar" method="_on_world_noise"]

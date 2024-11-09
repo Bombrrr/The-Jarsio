@@ -14,7 +14,7 @@ func _process(delta):
 		$"../../Jarsio/OmniLight3D".show()
 		$"../../Player/OmniLight3D".show()
 		$"../../Node/CanvasLayer/Control".hide()
-		$"../../Player/Neck/Camera3D/SpotLight3D".hide()
+		$"../../Player/Neck/SpotLight3D".hide()
 		$"../../Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button3".show()
 		$"../../Player/Neck/finalarmt".hide()
 		$"../../World/Roof".use_collision = false
@@ -24,7 +24,7 @@ func _on_button_3_pressed():
 	$"../../Jarsio/OmniLight3D".hide()
 	$"../../Player/OmniLight3D".hide()
 	$"../../Node/CanvasLayer/Control".show()
-	$"../../Player/Neck/Camera3D/SpotLight3D".show()
+	$"../../Player/Neck/SpotLight3D".show()
 	$"../../Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button3".hide()
 	$"../../Player/Neck/finalarmt".show()
 	$"../../World/Roof".use_collision = true
