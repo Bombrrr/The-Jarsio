@@ -54,7 +54,7 @@ fog_height_density = 16.0
 script = ExtResource("1_uejb2")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99047, 0.236457, -0.41359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99047, 0.236457, 0.0970096)
 script = ExtResource("2_7wkcn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
