@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://4m0rjgnh442o"]
+[gd_scene load_steps=10 format=3 uid="uid://4m0rjgnh442o"]
 
+[ext_resource type="Texture2D" uid="uid://ds2rxm57pgyba" path="res://demoncat.jpg" id="1_hj876"]
 [ext_resource type="Script" path="res://Player2.gd" id="1_wux3w"]
 [ext_resource type="Script" path="res://cam.gd" id="2_5g87e"]
 [ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="3_kr6qb"]
@@ -16,8 +17,6 @@ sky_material = SubResource("ProceduralSkyMaterial_a0gjg")
 [sub_resource type="Environment" id="Environment_fo5o5"]
 background_mode = 2
 sky = SubResource("Sky_0t0x2")
-ambient_light_source = 3
-ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -27,6 +26,18 @@ use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(19.4874, 0, 0, 0, 3.86698, 0, 0, 0, 0.784732, 0, 1.55632, 8.43091)
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(19.4874, 0, 0, 0, 3.86698, 0, 0, 0, 0.784732, 0, 1.55632, -9.11647)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-8.51821e-07, 0, 0.784732, 0, 3.86698, 0, -19.4874, 0, -3.43017e-08, 9.35456, 1.55632, -1.21661)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-8.51821e-07, 0, 0.784732, 0, 3.86698, 0, -19.4874, 0, -3.43017e-08, -9.47343, 1.55632, -1.21661)
 use_collision = true
 
 [node name="Player" type="CharacterBody3D" parent="."]
@@ -48,11 +59,16 @@ script = ExtResource("2_5g87e")
 environment = SubResource("Environment_fo5o5")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 8)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, 8)
 pixel_size = 0.0025
 texture = ExtResource("3_kr6qb")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 2, 8)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.25, 2, 8)
 pixel_size = 0.0025
 texture = ExtResource("4_p4xio")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.90584, 1.91115, 3.24836)
+pixel_size = 0.0015
+texture = ExtResource("1_hj876")
