@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf7744rxgw40b"]
+[gd_scene load_steps=5 format=3 uid="uid://bf7744rxgw40b"]
 
 [ext_resource type="Texture2D" uid="uid://dm0btyyjiivcj" path="res://Untitled(1)(1).jpg" id="1_ruipx"]
 [ext_resource type="Script" path="res://quit2.gd" id="1_voadr"]
+[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="2_jrps7"]
 [ext_resource type="Texture2D" uid="uid://7htatx77nlmf" path="res://Untitled.jpeg" id="3_w2lbw"]
 
 [node name="con" type="Control"]
@@ -15,23 +16,33 @@ script = ExtResource("1_voadr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 237.0
-offset_bottom = 100.0
-scale = Vector2(4.8723, 4.8723)
+offset_left = 55.0
+offset_top = 73.0
+offset_right = 1098.0
+offset_bottom = 581.0
+theme_override_constants/separation = 50
 
-[node name="Text" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_jrps7")
 text = "Im begging you please dont 
 leave I need your support"
+horizontal_alignment = 1
 
-[node name="No" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="No" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("2_jrps7")
 text = "Stay And Make Jarsio Happy"
 
-[node name="yes" type="Button" parent="VBoxContainer"]
+[node name="yes" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("2_jrps7")
 text = "Leave And Make Jarsio Sad"
 
 [node name="Untitled(1)" type="Sprite2D" parent="."]
@@ -45,5 +56,5 @@ z_index = -1
 position = Vector2(584, 537)
 texture = ExtResource("3_w2lbw")
 
-[connection signal="pressed" from="VBoxContainer/No" to="." method="_on_no_pressed"]
-[connection signal="pressed" from="VBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/yes" to="." method="_on_yes_pressed"]

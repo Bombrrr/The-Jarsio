@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://6wi3m5kjf3w4"]
+[gd_scene load_steps=15 format=3 uid="uid://6wi3m5kjf3w4"]
 
 [ext_resource type="Script" path="res://quit.gd" id="1_c86qh"]
+[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="2_e2al3"]
 [ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="3_j1u0c"]
 [ext_resource type="Script" path="res://Black2.gd" id="4_2dx0q"]
 [ext_resource type="Shader" path="res://dis.gdshader" id="5_1yxbm"]
@@ -54,26 +55,32 @@ script = ExtResource("1_c86qh")
 layout_mode = 0
 offset_right = 237.0
 offset_bottom = 100.0
-scale = Vector2(4.8723, 4.8723)
+theme = ExtResource("2_e2al3")
 
-[node name="Text" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Are you sure you want to exit
-the game I worked so hard to
-make spending hours of time"
+text = "Are you sure you want to 
+exit the game I worked so
+hard to make spending hours
+of my time"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_e2al3")
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="No" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("2_e2al3")
 text = "No Go Back"
 
 [node name="yes" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("2_e2al3")
 text = "Yes Exit Game"
 
 [node name="Untitled(1)" type="Sprite2D" parent="."]
@@ -112,6 +119,7 @@ texture = ExtResource("6_v7e15")
 layer = 5
 
 [node name="Black3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 z_index = 6
 position = Vector2(707.5, 452)
 scale = Vector2(0.979688, 1.31296)
