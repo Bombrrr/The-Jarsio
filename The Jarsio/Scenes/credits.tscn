@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://bwntb4qr2qwpw"]
 
 [ext_resource type="Script" path="res://Scripts/credits.gd" id="1_gugt2"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="2_2uf7o"]
@@ -74,8 +74,8 @@ horizontal_alignment = 1
 
 [node name="Credit2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "My dad told me to use tags instead
-of using buttons for my text"
+text = "My dad told me to use labels
+instead of using buttons for text"
 
 [node name="return" type="Button" parent="VBoxContainer"]
 layout_mode = 2
