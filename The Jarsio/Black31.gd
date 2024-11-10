@@ -28,7 +28,7 @@ func fadeout():
 	opac = opac + 0.02
 	if opac >= 1:
 		fadd = false
-		get_tree().change_scene_to_file("res://menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 		get_tree().paused = false
 
 func _on_button_2_pressed():

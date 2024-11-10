@@ -19,7 +19,7 @@ func _process(delta):
 	
 	var exit = Input.is_action_pressed("exit")
 	if exit:
-		scene = "res://menu.tscn"
+		scene = "res://Scenes/menu.tscn"
 		fadd = true
 		fad = false
 		
@@ -37,37 +37,37 @@ func fadeout():
 		get_tree().change_scene_to_file(scene)
 
 func _on_quit_pressed():
-	scene = "res://quit.tscn"
+	scene = "res://Scenes/quit.tscn"
 	fadd = true
 	fad = false
 
 
 func _on_credits_pressed():
-	scene = "res://credits.tscn"
+	scene = "res://Scenes/credits.tscn"
 	fadd = true
 	fad = false
 
 
 func _on_settings_pressed():
-	scene = "res://settings.tscn"
+	scene = "res://Scenes/settings.tscn"
 	fadd = true
 	fad = false
 
 
 func _on_no_pressed():
-	scene = "res://menu.tscn"
+	scene = "res://Scenes/menu.tscn"
 	fadd = true
 	fad = false
 
 
 func _on_return_pressed():
-	scene = "res://menu.tscn"
+	scene = "res://Scenes/menu.tscn"
 	fadd = true
 	fad = false
 
 
 func _on_start_pressed():
-	scene = "res://main.tscn"
+	scene = "res://Scenes/main.tscn"
 	fadd = true
 	fad = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

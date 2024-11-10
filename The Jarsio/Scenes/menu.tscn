@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://cl356nit6ykvv"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_r2tmy"]
-[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_h1edb"]
-[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="3_32mg2"]
-[ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="7_msueu"]
-[ext_resource type="Script" path="res://Black2.gd" id="8_iyvup"]
-[ext_resource type="Shader" path="res://dis.gdshader" id="9_hixr7"]
-[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="10_4kvbf"]
-[ext_resource type="Script" path="res://Black3.gd" id="10_soiar"]
+[ext_resource type="Script" path="res://control.gd" id="1_avorx"]
+[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_sdfr7"]
+[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="3_e0lnd"]
+[ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="4_d0moe"]
+[ext_resource type="Script" path="res://Black2.gd" id="5_df2m5"]
+[ext_resource type="Shader" path="res://dis.gdshader" id="6_s40cy"]
+[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="7_r1hdk"]
+[ext_resource type="Script" path="res://Black3.gd" id="8_eo5tn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_e2fqf"]
 noise_type = 2
@@ -27,7 +27,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_rocpd")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_01obk"]
-shader = ExtResource("9_hixr7")
+shader = ExtResource("6_s40cy")
 shader_parameter/scroll1 = Vector2(0.05, 0.05)
 shader_parameter/scroll2 = Vector2(0.05, 0.05)
 shader_parameter/distortion_strength = 0.2
@@ -56,12 +56,12 @@ grow_vertical = 2
 scale = Vector2(0.607807, 0.607807)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_r2tmy")
+script = ExtResource("1_avorx")
 
 [node name="Untitled(1)" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(585.712, 215.529)
-texture = ExtResource("2_h1edb")
+texture = ExtResource("2_sdfr7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -73,13 +73,13 @@ offset_top = -392.985
 offset_right = 55.3029
 offset_bottom = 71.0151
 grow_vertical = 0
-theme = ExtResource("3_32mg2")
+theme = ExtResource("3_e0lnd")
 theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("3_32mg2")
+theme = ExtResource("3_e0lnd")
 text = "Start"
 alignment = 0
 expand_icon = true
@@ -87,7 +87,7 @@ expand_icon = true
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("3_32mg2")
+theme = ExtResource("3_e0lnd")
 text = "Controls"
 alignment = 0
 expand_icon = true
@@ -95,7 +95,7 @@ expand_icon = true
 [node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("3_32mg2")
+theme = ExtResource("3_e0lnd")
 text = "Credits"
 alignment = 0
 expand_icon = true
@@ -103,7 +103,7 @@ expand_icon = true
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-theme = ExtResource("3_32mg2")
+theme = ExtResource("3_e0lnd")
 text = "Quit Game"
 alignment = 0
 expand_icon = true
@@ -114,7 +114,7 @@ offset_left = 335.633
 offset_top = 391.572
 offset_right = 1490.63
 offset_bottom = 708.572
-theme = ExtResource("3_32mg2")
+theme = ExtResource("3_e0lnd")
 theme_override_font_sizes/font_size = 300
 text = "THE JARSIO"
 
@@ -123,15 +123,15 @@ modulate = Color(1, 1, 1, 0.741176)
 z_index = -1
 position = Vector2(562.679, 227.046)
 scale = Vector2(6.57014, 6.82733)
-texture = ExtResource("7_msueu")
+texture = ExtResource("4_d0moe")
 
 [node name="Black2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.952941)
 z_index = -1
 position = Vector2(562.679, 227.046)
 scale = Vector2(6.57014, 6.82733)
-texture = ExtResource("7_msueu")
-script = ExtResource("8_iyvup")
+texture = ExtResource("4_d0moe")
+script = ExtResource("5_df2m5")
 
 [node name="Timer" type="Timer" parent="Black2"]
 
@@ -146,7 +146,7 @@ material = SubResource("ShaderMaterial_01obk")
 position = Vector2(587, 343)
 scale = Vector2(0.607807, 0.607807)
 mesh = SubResource("PlaneMesh_0mgdj")
-texture = ExtResource("2_h1edb")
+texture = ExtResource("2_sdfr7")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 11
@@ -156,8 +156,8 @@ visible = false
 z_index = 9
 position = Vector2(593, 367)
 scale = Vector2(0.745833, 1.04259)
-texture = ExtResource("10_4kvbf")
-script = ExtResource("10_soiar")
+texture = ExtResource("7_r1hdk")
+script = ExtResource("8_eo5tn")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="CanvasLayer2/Black3" method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="CanvasLayer2/Black3" method="_on_settings_pressed"]
