@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://jo6kogv74fi7"]
+[gd_scene load_steps=34 format=3 uid="uid://jo6kogv74fi7"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://be4ql4aa1pr8e" path="res://Images/mic_24dp_FFFFFF_FILL0_wght400_GRAD200_opsz24.svg" id="12_8n8wj"]
 [ext_resource type="Script" path="res://Scripts/Roof.gd" id="13_76a1b"]
 [ext_resource type="Texture2D" uid="uid://crjsk2vbbwf8" path="res://Images/Jarsio World Map.png" id="14_h2rsu"]
+[ext_resource type="Script" path="res://Scenes/reference.gd" id="14_mj58o"]
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="14_sp2wd"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="15_difg5"]
 [ext_resource type="Script" path="res://Scripts/fov.gd" id="16_sk2ul"]
@@ -196,10 +197,11 @@ texture = ExtResource("12_8n8wj")
 
 [node name="World" type="Node3D" parent="."]
 
-[node name="Sprite3D" type="Sprite3D" parent="World"]
+[node name="reference" type="Sprite3D" parent="World"]
 transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 8.74228e-08, 1, 8.74228e-08, 1, -8.74228e-08, 4.37114e-08, 119.709, 43.3332, -10.944)
 pixel_size = 0.08
 texture = ExtResource("14_h2rsu")
+script = ExtResource("14_mj58o")
 
 [node name="Roof" type="CSGBox3D" parent="World"]
 transform = Transform3D(5048.12, 0, 0, 0, 1, 0, 0, 0, 7368.97, -2.94259, 2.44902, 1.86786)
