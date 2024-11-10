@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cl356nit6ykvv"]
+[gd_scene load_steps=15 format=3 uid="uid://bufu16bmxmtvv"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_avorx"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_pba05"]
 [ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_sdfr7"]
 [ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="3_e0lnd"]
 [ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="4_d0moe"]
-[ext_resource type="Script" path="res://Black2.gd" id="5_df2m5"]
+[ext_resource type="Script" path="res://scripts/Black2.gd" id="5_n1jl7"]
 [ext_resource type="Shader" path="res://dis.gdshader" id="6_s40cy"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="7_r1hdk"]
-[ext_resource type="Script" path="res://Black3.gd" id="8_eo5tn"]
+[ext_resource type="Script" path="res://scripts/Black3.gd" id="8_7wi8w"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_e2fqf"]
 noise_type = 2
@@ -56,7 +56,7 @@ grow_vertical = 2
 scale = Vector2(0.607807, 0.607807)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_avorx")
+script = ExtResource("1_pba05")
 
 [node name="Untitled(1)" type="Sprite2D" parent="."]
 z_index = -2
@@ -100,6 +100,15 @@ text = "Credits"
 alignment = 0
 expand_icon = true
 
+[node name="Hall of art" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_e0lnd")
+text = "Hall of art
+"
+alignment = 0
+expand_icon = true
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -131,7 +140,7 @@ z_index = -1
 position = Vector2(562.679, 227.046)
 scale = Vector2(6.57014, 6.82733)
 texture = ExtResource("4_d0moe")
-script = ExtResource("5_df2m5")
+script = ExtResource("5_n1jl7")
 
 [node name="Timer" type="Timer" parent="Black2"]
 
@@ -157,11 +166,12 @@ z_index = 9
 position = Vector2(593, 367)
 scale = Vector2(0.745833, 1.04259)
 texture = ExtResource("7_r1hdk")
-script = ExtResource("8_eo5tn")
+script = ExtResource("8_7wi8w")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="CanvasLayer2/Black3" method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="CanvasLayer2/Black3" method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="CanvasLayer2/Black3" method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Hall of art" to="CanvasLayer2/Black3" method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="CanvasLayer2/Black3" method="_on_quit_pressed"]
 [connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Black2/Timer2" to="Black2" method="_on_timer_2_timeout"]

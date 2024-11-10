@@ -1,27 +1,27 @@
-[gd_scene load_steps=31 format=3 uid="uid://cp7jha4fbenxf"]
+[gd_scene load_steps=31 format=3 uid="uid://c1qyrwci78jo3"]
 
-[ext_resource type="Script" path="res://Jarsio.gd" id="1_uejb2"]
-[ext_resource type="Script" path="res://CharacterMovement.gd" id="2_7wkcn"]
-[ext_resource type="Script" path="res://SpotLight3D.gd" id="3_3grfh"]
-[ext_resource type="Script" path="res://cam.gd" id="3_llhdt"]
+[ext_resource type="Script" path="res://scripts/Jarsio.gd" id="1_d688v"]
+[ext_resource type="Script" path="res://scripts/CharacterMovement.gd" id="2_kphyx"]
 [ext_resource type="PackedScene" uid="uid://dppjoye7xt1so" path="res://finalarmt.glb" id="3_q0xw4"]
-[ext_resource type="Script" path="res://hand.gd" id="4_7cgpe"]
-[ext_resource type="Script" path="res://AudioStreamPlayer.gd" id="5_af5hf"]
-[ext_resource type="Script" path="res://JarsioNav.gd" id="6_cgs5a"]
+[ext_resource type="Script" path="res://scripts/SpotLight3D.gd" id="3_qtjit"]
+[ext_resource type="Script" path="res://scripts/hand.gd" id="5_jgyut"]
+[ext_resource type="Script" path="res://scripts/cam.gd" id="6_wmkdg"]
 [ext_resource type="PackedScene" uid="uid://cgo5qjbqmd0e" path="res://jarwalllk.glb" id="7_b2bs1"]
-[ext_resource type="Script" path="res://JarsioAnim.gd" id="8_4tn88"]
-[ext_resource type="Script" path="res://ProgressBar.gd" id="9_aylal"]
+[ext_resource type="Script" path="res://scripts/AudioStreamPlayer.gd" id="7_db07e"]
+[ext_resource type="Script" path="res://scripts/JarsioNav.gd" id="8_ivmpy"]
+[ext_resource type="Script" path="res://scripts/JarsioAnim.gd" id="10_aluc5"]
 [ext_resource type="Texture2D" uid="uid://be4ql4aa1pr8e" path="res://mic_24dp_FFFFFF_FILL0_wght400_GRAD200_opsz24.svg" id="10_wtwym"]
-[ext_resource type="Script" path="res://Black31.gd" id="11_s4gpb"]
-[ext_resource type="Script" path="res://Roof.gd" id="12_vx8tu"]
+[ext_resource type="Script" path="res://scripts/ProgressBar.gd" id="11_c6rjp"]
+[ext_resource type="Script" path="res://scripts/Roof.gd" id="13_3vlvy"]
+[ext_resource type="Script" path="res://scripts/pause.gd" id="14_3aaws"]
 [ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="15_difg5"]
-[ext_resource type="Script" path="res://pause.gd" id="15_wojk0"]
-[ext_resource type="Script" path="res://fov.gd" id="16_53kp2"]
-[ext_resource type="Script" path="res://Node3.gd" id="16_hdbop"]
+[ext_resource type="Script" path="res://scripts/fov.gd" id="16_5nhnm"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="17_ivf75"]
-[ext_resource type="Script" path="res://fovv.gd" id="17_jc313"]
-[ext_resource type="Script" path="res://Button3.gd" id="19_qv23b"]
+[ext_resource type="Script" path="res://scripts/fovv.gd" id="17_xrhox"]
+[ext_resource type="Script" path="res://scripts/Button3.gd" id="18_3hrim"]
+[ext_resource type="Script" path="res://scripts/Node3.gd" id="19_oh5y5"]
 [ext_resource type="PackedScene" uid="uid://vevgfmh6dcgm" path="res://Machine.glb" id="20_75qnq"]
+[ext_resource type="Script" path="res://scripts/Black31.gd" id="21_6xl1m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7
@@ -54,11 +54,11 @@ fog_height = -1024.0
 fog_height_density = 16.0
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_uejb2")
+script = ExtResource("1_d688v")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99047, 0.236457, 0.0970096)
-script = ExtResource("2_7wkcn")
+script = ExtResource("2_kphyx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.782066, -0.0017757)
@@ -76,16 +76,16 @@ shadow_enabled = true
 shadow_blur = 3.727
 spot_range = 6.28183
 spot_angle = 28.1267
-script = ExtResource("3_3grfh")
+script = ExtResource("3_qtjit")
 
 [node name="finalarmt" parent="Player/Neck" instance=ExtResource("3_q0xw4")]
 transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, -0.729848, 0.00299597)
-script = ExtResource("4_7cgpe")
+script = ExtResource("5_jgyut")
 
 [node name="Camera3D" type="Camera3D" parent="Player/Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.808094, 0)
 fov = 70.0
-script = ExtResource("3_llhdt")
+script = ExtResource("6_wmkdg")
 
 [node name="are" type="Area3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84005, -0.0834785)
@@ -103,18 +103,18 @@ process_mode = 1
 stream = SubResource("AudioStreamMicrophone_ggsek")
 autoplay = true
 bus = &"Record"
-script = ExtResource("5_af5hf")
+script = ExtResource("7_db07e")
 
 [node name="Jarsio" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -10.196, 1.36088, -8.056)
-script = ExtResource("6_cgs5a")
+script = ExtResource("8_ivmpy")
 
 [node name="Neck" type="Node3D" parent="Jarsio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317309, 1.19209e-07, -2.81334e-05)
 
 [node name="jarwalllk" parent="Jarsio/Neck" instance=ExtResource("7_b2bs1")]
 transform = Transform3D(-1.31134e-09, 0, 0.03, 0, 0.03, 0, -0.03, 0, -1.31134e-09, 0, -0.909391, 0)
-script = ExtResource("8_4tn88")
+script = ExtResource("10_aluc5")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Jarsio"]
 
@@ -173,7 +173,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_c8nsk")
 value = 5.0
 fill_mode = 3
 show_percentage = false
-script = ExtResource("9_aylal")
+script = ExtResource("11_c6rjp")
 
 [node name="TextureRect" type="TextureRect" parent="Node/CanvasLayer/Control"]
 modulate = Color(0.443137, 0, 0.0313726, 1)
@@ -198,7 +198,7 @@ texture = ExtResource("10_wtwym")
 [node name="Roof" type="CSGBox3D" parent="World"]
 transform = Transform3D(5048.12, 0, 0, 0, 1, 0, 0, 0, 7368.97, -2.94259, 2.44902, 1.86786)
 visible = false
-script = ExtResource("12_vx8tu")
+script = ExtResource("13_3vlvy")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="World"]
 navigation_mesh = SubResource("NavigationMesh_gdfcd")
@@ -241,7 +241,7 @@ size = Vector3(1.46407, 1, 1)
 
 [node name="Node2" type="Node" parent="."]
 process_mode = 3
-script = ExtResource("15_wojk0")
+script = ExtResource("14_3aaws")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Node2"]
 process_mode = 2
@@ -362,7 +362,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource("15_difg5")
 horizontal_alignment = 1
-script = ExtResource("16_53kp2")
+script = ExtResource("16_5nhnm")
 
 [node name="HSlider" type="HSlider" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -373,18 +373,18 @@ theme = ExtResource("15_difg5")
 min_value = 60.0
 max_value = 120.0
 value = 60.0
-script = ExtResource("17_jc313")
+script = ExtResource("17_xrhox")
 
 [node name="Button3" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("15_difg5")
 text = "DisDevMod"
-script = ExtResource("19_qv23b")
+script = ExtResource("18_3hrim")
 
 [node name="Node" type="Node" parent="Node2"]
 process_mode = 3
-script = ExtResource("16_hdbop")
+script = ExtResource("19_oh5y5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Node2/Node"]
 layer = 4
@@ -397,7 +397,7 @@ z_index = 10
 position = Vector2(592.5, 303)
 scale = Vector2(0.879688, 0.987037)
 texture = ExtResource("17_ivf75")
-script = ExtResource("11_s4gpb")
+script = ExtResource("21_6xl1m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ciuuj")

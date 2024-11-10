@@ -9,8 +9,4 @@ func _ready():
 func _process(delta):
 	var exit = Input.is_action_pressed("exit")
 	if exit:
-		get_tree().change_scene_to_file("res://menu.tscn")
-
-
-func _on_quit_pressed():
-	get_tree().change_scene_to_file("res://menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")

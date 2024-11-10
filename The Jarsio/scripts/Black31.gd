@@ -6,7 +6,7 @@ extends Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	self.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,7 +24,7 @@ func fadein():
 	if opac <= 0:
 		fad = false
 
-func fadeout():d
+func fadeout():
 	opac = opac + 0.02
 	if opac >= 1:
 		fadd = false
