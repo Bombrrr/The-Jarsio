@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cp7jha4fbenxf"]
+[gd_scene load_steps=31 format=3 uid="uid://cp7jha4fbenxf"]
 
 [ext_resource type="Script" path="res://Jarsio.gd" id="1_uejb2"]
 [ext_resource type="Script" path="res://CharacterMovement.gd" id="2_7wkcn"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://be4ql4aa1pr8e" path="res://mic_24dp_FFFFFF_FILL0_wght400_GRAD200_opsz24.svg" id="10_wtwym"]
 [ext_resource type="Script" path="res://Black31.gd" id="11_s4gpb"]
 [ext_resource type="Script" path="res://Roof.gd" id="12_vx8tu"]
+[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="15_difg5"]
 [ext_resource type="Script" path="res://pause.gd" id="15_wojk0"]
 [ext_resource type="Script" path="res://fov.gd" id="16_53kp2"]
 [ext_resource type="Script" path="res://Node3.gd" id="16_hdbop"]
@@ -247,95 +248,128 @@ process_mode = 2
 layer = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Node2/CanvasLayer"]
-offset_left = 11.0
-offset_top = 31.0
-offset_right = 345.0
-offset_bottom = 202.0
-scale = Vector2(3.4, 3.4)
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 1418.0
+offset_bottom = 643.0
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("15_difg5")
+theme_override_constants/separation = 20
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
+theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 text = "Controls"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
+theme_override_constants/separation = 30
 
-[node name="Control name" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Control name2" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
 
-[node name="fc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+[node name="fc" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "Move Forward"
 
-[node name="bc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+[node name="bc" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "Move Backward"
 
-[node name="ec" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+[node name="ec" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "Cool Emote"
 
-[node name="qc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name"]
+[node name="qc" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control name2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "Main/Pause Menu"
 
-[node name="Control key" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Control key2" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
 
-[node name="fc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+[node name="fc" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "W"
+horizontal_alignment = 1
 
-[node name="bc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+[node name="bc" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "S"
+horizontal_alignment = 1
 
-[node name="ec" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+[node name="ec" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key2"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "F"
+horizontal_alignment = 1
 
-[node name="qc" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key"]
+[node name="qc" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer2/HBoxContainer/Control key2"]
 layout_mode = 2
-text = "esc"
+theme = ExtResource("15_difg5")
+text = "ESC"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Node2/CanvasLayer/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
+theme_override_constants/separation = 10
 
 [node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("15_difg5")
 text = "Resume Game"
 
 [node name="Button2" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+theme = ExtResource("15_difg5")
 text = "Return To Menu
 "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("15_difg5")
 
-[node name="Button3" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "FOV"
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-button_mask = 4
+size_flags_vertical = 1
+theme = ExtResource("15_difg5")
+horizontal_alignment = 1
 script = ExtResource("16_53kp2")
 
 [node name="HSlider" type="HSlider" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
 mouse_default_cursor_shape = 2
+theme = ExtResource("15_difg5")
 min_value = 60.0
 max_value = 120.0
 value = 60.0
@@ -344,6 +378,7 @@ script = ExtResource("17_jc313")
 [node name="Button3" type="Button" parent="Node2/CanvasLayer/HBoxContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+theme = ExtResource("15_difg5")
 text = "DisDevMod"
 script = ExtResource("19_qv23b")
 
@@ -356,6 +391,7 @@ layer = 4
 
 [node name="Black3" type="Sprite2D" parent="Node2/Node/CanvasLayer"]
 process_mode = 3
+visible = false
 top_level = true
 z_index = 10
 position = Vector2(592.5, 303)
@@ -378,9 +414,7 @@ transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 
 [connection signal="timeout" from="Jarsio/Timer" to="Jarsio" method="_on_timer_timeout"]
 [connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button" to="Node2" method="_on_button_pressed"]
 [connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button2" to="Node2/Node/CanvasLayer/Black3" method="_on_button_2_pressed"]
-[connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Button3" to="Player" method="_on_button_3_pressed"]
-[connection signal="toggled" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Button" to="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" method="_on_toggled"]
 [connection signal="fov" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" to="Player/Neck/Camera3D" method="_on_h_slider_fov"]
-[connection signal="fov" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" to="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Button" method="_on_h_slider_fov"]
+[connection signal="fov" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" to="Node2/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Label2" method="_on_h_slider_fov"]
 [connection signal="pressed" from="Node2/CanvasLayer/HBoxContainer/VBoxContainer/Button3" to="Node2/Node" method="_on_button_3_pressed"]
 [connection signal="grav" from="Node2/Node" to="Player" method="_on_node_grav"]

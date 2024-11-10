@@ -7,13 +7,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-@warning_ignore("unused_parameter")
 func _process(delta):
 	pass
 
 
 func _on_h_slider_fov(fo):
-	if fo == 69: set_text("NICE")
-	elif fo == 60: set_text("NORMAL")
-	elif fo == 169: set_text("What Da Hell")
-	else: set_text(str(fo)) 
+	pass # Replace with function body.

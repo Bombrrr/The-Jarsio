@@ -63,22 +63,22 @@ theme_override_constants/separation = 70
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="fc" type="Button" parent="HBoxContainer/Control name"]
+[node name="fc" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
 text = "Move Forward"
 
-[node name="bc" type="Button" parent="HBoxContainer/Control name"]
+[node name="bc" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
 text = "Move Backward"
 
-[node name="ec" type="Button" parent="HBoxContainer/Control name"]
+[node name="ec" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
 text = "Cool Emote"
 
-[node name="qc" type="Button" parent="HBoxContainer/Control name"]
+[node name="qc" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
 text = "Main/Pause Menu"

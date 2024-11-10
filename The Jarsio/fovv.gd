@@ -12,6 +12,3 @@ func _process(delta):
 	
 	if sma: emit_signal("fov", 169)
 	else: emit_signal("fov", value)
-
-func _on_toggled(button_pressed):
-	sma = true

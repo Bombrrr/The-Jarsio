@@ -24,7 +24,7 @@ func fadein():
 	if opac <= 0:
 		fad = false
 
-func fadeout():
+func fadeout():d
 	opac = opac + 0.02
 	if opac >= 1:
 		fadd = false
