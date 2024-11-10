@@ -13,10 +13,11 @@ config_version=5
 config/name="The Jarsio"
 run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Images/icon.svg"
 
 [audio]
 
+buses/default_bus_layout="res://Others/default_bus_layout.tres"
 driver/enable_input=true
 
 [display]
@@ -24,7 +25,7 @@ driver/enable_input=true
 window/size/mode=4
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
-mouse_cursor/custom_image="res://cur(2).png"
+mouse_cursor/custom_image="res://Images/cur(2).png"
 
 [dotnet]
 

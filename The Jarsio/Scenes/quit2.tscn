@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://bsbouixfl0cca"]
 
-[ext_resource type="Texture2D" uid="uid://dm0btyyjiivcj" path="res://Untitled(1)(1).jpg" id="1_ruipx"]
-[ext_resource type="Script" path="res://scripts/quit2.gd" id="1_voadr"]
-[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="2_jrps7"]
-[ext_resource type="Texture2D" uid="uid://7htatx77nlmf" path="res://Untitled.jpeg" id="3_w2lbw"]
+[ext_resource type="Texture2D" uid="uid://dm0btyyjiivcj" path="res://Images/Untitled(1)(1).jpg" id="1_ruipx"]
+[ext_resource type="Script" path="res://Scripts/quit2.gd" id="1_voadr"]
+[ext_resource type="Theme" path="res://Others/basthem.tres" id="2_jrps7"]
+[ext_resource type="Texture2D" uid="uid://7htatx77nlmf" path="res://Images/Untitled.jpeg" id="3_w2lbw"]
 
 [node name="con" type="Control"]
 layout_mode = 3

@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=15 format=3]
 
-[ext_resource type="Script" path="res://scripts/credits.gd" id="1_wg3ea"]
-[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_nc713"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_gugt2"]
+[ext_resource type="Theme" path="res://Others/basthem.tres" id="2_2uf7o"]
 [ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="3_fl3vr"]
-[ext_resource type="Script" path="res://scripts/Black2.gd" id="4_qn32e"]
-[ext_resource type="Shader" path="res://dis.gdshader" id="5_ekglp"]
-[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="6_1mspy"]
-[ext_resource type="Script" path="res://scripts/Black3.gd" id="6_hxafe"]
+[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Images/Untitled(1).jpg" id="3_irvcm"]
+[ext_resource type="Shader" path="res://Others/dis.gdshader" id="5_ekglp"]
+[ext_resource type="Script" path="res://Scripts/Black2.gd" id="5_qwq73"]
+[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="7_3jxut"]
+[ext_resource type="Script" path="res://Scripts/Black3.gd" id="8_nmvxl"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_e4spq"]
 noise_type = 2
@@ -48,30 +49,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wg3ea")
+script = ExtResource("1_gugt2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = -802.0
-offset_bottom = -436.0
+offset_left = -90.0
+offset_top = 14.0
+offset_right = 453.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3.31947, 3.3263)
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("2_2uf7o")
+theme_override_constants/separation = 50
 
-[node name="Credit" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Everything was created by Henry Domjan
-Made using godot engine"
+text = "99% of the game was created by 
+Henry Domjan Made using godot"
+horizontal_alignment = 1
 
 [node name="Credit2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "My dad told me to use tags instead of
-buttons for text  boxes but i didnt (lazy)"
+text = "My dad told me to use tags instead
+of using buttons for my text"
 
 [node name="return" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -82,7 +86,7 @@ text = "Return to menu"
 z_index = -1
 position = Vector2(577, 320)
 scale = Vector2(0.622222, 0.622222)
-texture = ExtResource("2_nc713")
+texture = ExtResource("3_irvcm")
 
 [node name="Black" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.741176)
@@ -97,7 +101,7 @@ z_index = -1
 position = Vector2(562.679, 227.046)
 scale = Vector2(6.57014, 6.82733)
 texture = ExtResource("3_fl3vr")
-script = ExtResource("4_qn32e")
+script = ExtResource("5_qwq73")
 
 [node name="Timer" type="Timer" parent="Black2"]
 
@@ -108,14 +112,15 @@ z_index = 3
 material = SubResource("ShaderMaterial_k3ted")
 position = Vector2(600.52, 248.434)
 mesh = SubResource("PlaneMesh_c8mhv")
-texture = ExtResource("2_nc713")
+texture = ExtResource("3_irvcm")
 
 [node name="Black3" type="Sprite2D" parent="."]
+visible = false
 z_index = 3
 position = Vector2(658.5, 285)
 scale = Vector2(0.931771, 1.18704)
-texture = ExtResource("6_1mspy")
-script = ExtResource("6_hxafe")
+texture = ExtResource("7_3jxut")
+script = ExtResource("8_nmvxl")
 
 [connection signal="pressed" from="VBoxContainer/return" to="Black3" method="_on_return_pressed"]
 [connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]

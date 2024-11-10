@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://jwnptwoka5fw"]
+[gd_scene load_steps=15 format=3]
 
-[ext_resource type="Script" path="res://scripts/settings.gd" id="1_rtpg8"]
-[ext_resource type="Theme" uid="uid://ouvvf4pnqpm2" path="res://basthem.tres" id="2_37i5h"]
-[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Untitled(1).jpg" id="2_g75u4"]
+[ext_resource type="Script" path="res://Scripts/settings.gd" id="1_rtpg8"]
+[ext_resource type="Theme" path="res://Others/basthem.tres" id="2_37i5h"]
+[ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Images/Untitled(1).jpg" id="2_g75u4"]
 [ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="3_42vqx"]
-[ext_resource type="Script" path="res://scripts/Black2.gd" id="5_8ca68"]
-[ext_resource type="Shader" path="res://dis.gdshader" id="5_noh0o"]
-[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Untitled(2).jpg" id="6_bqd8r"]
-[ext_resource type="Script" path="res://scripts/Black3.gd" id="8_4o6sb"]
+[ext_resource type="Script" path="res://Scripts/Black2.gd" id="5_8ca68"]
+[ext_resource type="Shader" path="res://Others/dis.gdshader" id="5_noh0o"]
+[ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="6_bqd8r"]
+[ext_resource type="Script" path="res://Scripts/Black3.gd" id="8_4o6sb"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wfded"]
 noise_type = 2
