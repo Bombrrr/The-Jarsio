@@ -70,6 +70,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.782066, -0.0017757
 shape = SubResource("CapsuleShape3D_668xl")
 
 [node name="Neck" type="Node3D" parent="Player"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player/Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218768, 0.79581, 0.094081)
@@ -167,9 +168,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -72.0
-offset_top = -485.0
+offset_top = -397.0
 offset_right = -32.0
-offset_bottom = -96.0
+offset_bottom = -77.0
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_60ovy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c8nsk")
@@ -186,15 +187,24 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -88.0001
-offset_top = -84.0001
+offset_left = -88.0002
+offset_top = -68.0
 offset_right = 2312.0
-offset_bottom = 2316.0
+offset_bottom = 2332.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.03, 0.03)
 mouse_filter = 2
 texture = ExtResource("12_8n8wj")
+
+[node name="TextureRect2" type="TextureRect" parent="Node/CanvasLayer/Control"]
+modulate = Color(0.4, 0.423529, 0.333333, 1)
+layout_mode = 0
+offset_left = 914.0
+offset_right = 1914.0
+offset_bottom = 1000.0
+scale = Vector2(0.240001, 0.240001)
+texture = ExtResource("14_h2rsu")
 
 [node name="World" type="Node3D" parent="."]
 
@@ -279,7 +289,7 @@ use_collision = true
 size = Vector3(1.46407, 1, 1)
 
 [node name="Wall16" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
-transform = Transform3D(5.69725, 0, 0.484464, 0, 1.87831, 0, -5.22569, 0, 0.528181, 15.2967, 1.28762, 22.091)
+transform = Transform3D(5.69725, 0, 0.484464, 0, 1.87831, 0, -5.22569, 0, 0.528181, 16.8632, 1.28762, 20.7722)
 use_collision = true
 size = Vector3(1.46407, 1, 1)
 
@@ -329,7 +339,7 @@ use_collision = true
 size = Vector3(1.46407, 1, 1)
 
 [node name="Wall26" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
-transform = Transform3D(-5.49197, 0, 0.504427, 0, 1.87831, 0, -5.44103, 0, -0.50915, 15.6663, 1.28762, -17.9052)
+transform = Transform3D(-5.49197, 0, 0.504427, 0, 1.87831, 0, -5.44103, 0, -0.50915, 15.6663, 2.20489, -17.9052)
 use_collision = true
 size = Vector3(0.868559, 1, 1)
 
@@ -348,13 +358,53 @@ transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.50
 use_collision = true
 size = Vector3(3.56658, 1, 1)
 
+[node name="Wall28" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.506795, -12.4965, 1.288, 16.5362)
+use_collision = true
+size = Vector3(5.42949, 1, 1)
+
 [node name="Wall13" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
 transform = Transform3D(-4.22976, 0, 0.197422, 0, 1.87831, 0, -1.21198, 0, -0.68899, 4.09878, 1.288, 22.1983)
 use_collision = true
 size = Vector3(2.25591, 1, 1)
 
-[node name="Wall12" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
-transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.506795, 9.78315, 1.288, 1.79416)
+[node name="Wall29" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-4.22976, 0, 0.197422, 0, 1.87831, 0, -1.21198, 0, -0.68899, 4.09878, 1.288, 26.9952)
+use_collision = true
+size = Vector3(4.62775, 1, 1)
+
+[node name="Wall30" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(2.7768, 0, 0.668887, 0, 1.87831, 0, -7.21498, 0, 0.257432, 16.8529, 1.24181, -24.6152)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall31" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(2.7768, 0, 0.668887, 0, 1.87831, 0, -7.21498, 0, 0.257432, 19.7273, 1.24181, -20.8878)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall32" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.506795, 17.8067, 1.288, -21.3994)
+use_collision = true
+size = Vector3(1.00159, 1, 1)
+
+[node name="Wall33" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-4.00861, 0, 0.612838, 0, 1.87831, 0, -6.61041, 0, -0.371631, 9.41385, 2.19419, 2.06168)
+use_collision = true
+size = Vector3(0.868559, 1, 1)
+
+[node name="Wall34" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(4.44353, 0, 0.586495, 0, 1.87831, 0, -6.32626, 0, 0.411952, 10.7469, 1.23111, -2.56395)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall35" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(4.44353, 0, 0.586495, 0, 1.87831, 0, -6.32626, 0, 0.411952, 13.7619, 1.23111, 0.0741157)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall36" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-2.26391, 0, 0.614565, 0, 1.87831, 0, -3.77286, 0, -0.368772, 12.3377, 1.2773, -0.809208)
 use_collision = true
 size = Vector3(1.00159, 1, 1)
 
@@ -523,6 +573,12 @@ environment = SubResource("Environment_ciuuj")
 
 [node name="Machine" parent="." instance=ExtResource("20_75qnq")]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.237463, 0.917481, -1.27874)
+
+[node name="Wall6" type="CSGBox3D" parent="Machine"]
+transform = Transform3D(-15.4618, 0, 1.25315e-07, 0, 3.75662, 0, -1.35171e-06, 0, -1.43343, -0.354237, 0.740278, 0.160935)
+visible = false
+use_collision = true
+size = Vector3(0.165734, 1, 1.63097)
 
 [connection signal="noise" from="." to="Jarsio" method="_on_world_noise"]
 [connection signal="noise" from="." to="Node/CanvasLayer/Control/ProgressBar" method="_on_world_noise"]
