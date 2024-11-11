@@ -214,6 +214,12 @@ pixel_size = 0.08
 texture = ExtResource("14_h2rsu")
 script = ExtResource("14_mj58o")
 
+[node name="reference2" type="Sprite3D" parent="World"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 62.4456, 43.3332, 79.5564)
+pixel_size = 0.08
+texture = ExtResource("14_h2rsu")
+script = ExtResource("14_mj58o")
+
 [node name="Roof" type="CSGBox3D" parent="World"]
 transform = Transform3D(5048.12, 0, 0, 0, 1, 0, 0, 0, 7368.97, -2.94259, 2.44902, 1.86786)
 visible = false
@@ -349,9 +355,9 @@ use_collision = true
 size = Vector3(1.46407, 1, 1)
 
 [node name="Wall6" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
-transform = Transform3D(6.69514, 0, 0.358358, 0, 1.87831, 0, -3.86544, 0, 0.620694, -10.4727, 1.28762, 0.525809)
+transform = Transform3D(6.69514, 0, 0.358358, 0, 1.87831, 0, -3.86544, 0, 0.620694, -11.9182, 1.28762, 1.00763)
 use_collision = true
-size = Vector3(1.46407, 1, 1)
+size = Vector3(1.97686, 1, 1)
 
 [node name="Wall11" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
 transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.506795, -9.405, 1.288, 13.1)
@@ -359,19 +365,29 @@ use_collision = true
 size = Vector3(3.56658, 1, 1)
 
 [node name="Wall28" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
-transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.506795, -12.4965, 1.288, 16.5362)
+transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.506795, -14.286, 1.288, 14.6238)
 use_collision = true
-size = Vector3(5.42949, 1, 1)
+size = Vector3(7.1489, 1, 1)
 
 [node name="Wall13" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
 transform = Transform3D(-4.22976, 0, 0.197422, 0, 1.87831, 0, -1.21198, 0, -0.68899, 4.09878, 1.288, 22.1983)
 use_collision = true
 size = Vector3(2.25591, 1, 1)
 
-[node name="Wall29" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
-transform = Transform3D(-4.22976, 0, 0.197422, 0, 1.87831, 0, -1.21198, 0, -0.68899, 4.09878, 1.288, 26.9952)
+[node name="Wall37" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-4.39986, 0, 0.00504154, 0, 1.87831, 0, -0.0309425, 0, -0.716699, 21.9684, 1.288, 24.4659)
 use_collision = true
-size = Vector3(4.62775, 1, 1)
+size = Vector3(4.08153, 1, 1)
+
+[node name="Wall29" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-4.22976, 0, 0.197422, 0, 1.87831, 0, -1.21198, 0, -0.68899, 4.82517, 1.288, 27.2844)
+use_collision = true
+size = Vector3(5.3104, 1, 1)
+
+[node name="Wall38" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-4.39354, 0, -0.0387338, 0, 1.87831, 0, 0.237797, 0, -0.715669, 24.5614, 1.288, 30.4242)
+use_collision = true
+size = Vector3(1.96233, 1, 1)
 
 [node name="Wall30" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
 transform = Transform3D(2.7768, 0, 0.668887, 0, 1.87831, 0, -7.21498, 0, 0.257432, 16.8529, 1.24181, -24.6152)
@@ -387,6 +403,81 @@ size = Vector3(1.46407, 1, 1)
 transform = Transform3D(-3.11125, 0, 0.506795, 0, 1.87831, 0, -3.11125, 0, -0.506795, 17.8067, 1.288, -21.3994)
 use_collision = true
 size = Vector3(1.00159, 1, 1)
+
+[node name="Wall39" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(0.13762, 0, -0.716601, 0, 1.87831, 0, 7.72965, 0, 0.0127587, -25.31, 1.28762, 12.4831)
+use_collision = true
+size = Vector3(2.40871, 1, 1)
+
+[node name="Wall40" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(2.87889, 0, -0.665167, 0, 1.87831, 0, 7.17485, 0, 0.266896, -23.1103, 1.24181, 26.8946)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall41" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(-0.295694, 0, -0.71619, 0, 1.87831, 0, 7.72522, 0, -0.0274129, -29.3989, 1.28762, 12.6969)
+use_collision = true
+size = Vector3(3.82748, 1, 1)
+
+[node name="Wall42" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(2.87889, 0, -0.665167, 0, 1.87831, 0, 7.17485, 0, 0.266896, -27.0862, 1.24181, 27.0015)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall43" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(5.69889, 0, -0.484297, 0, 1.87831, 0, 5.22391, 0, 0.528333, -16.9633, 1.28762, 35.8022)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall44" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(7.42812, 0, -0.198612, 0, 1.87831, 0, 2.14233, 0, 0.688647, -7.60136, 1.24181, 41.0812)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall45" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(5.69889, 0, -0.484297, 0, 1.87831, 0, 5.22391, 0, 0.528333, -19.3241, 1.28762, 39.0032)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall46" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(4.09011, 0, -0.608193, 0, 1.87831, 0, 6.5603, 0, 0.379186, -23.4076, 1.28762, 34.6108)
+use_collision = true
+size = Vector3(0.868559, 1, 1)
+
+[node name="Wall47" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(7.42812, 0, -0.198612, 0, 1.87831, 0, 2.14233, 0, 0.688647, -9.96216, 1.24181, 44.2822)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall48" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(7.24126, 0, 0.251011, 0, 1.87831, 0, -2.70754, 0, 0.671322, 2.88428, 1.28762, 40.6602)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall49" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(5.28005, 0, 0.523515, 0, 1.87831, 0, -5.64692, 0, 0.489503, 11.837, 1.24181, 34.7136)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall50" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(7.24126, 0, 0.251011, 0, 1.87831, 0, -2.70754, 0, 0.671322, 4.66526, 1.28762, 44.2166)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall52" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(5.28005, 0, 0.523515, 0, 1.87831, 0, -5.64692, 0, 0.489503, 14.7136, 1.24181, 36.8706)
+use_collision = true
+size = Vector3(2.21541, 1, 1)
+
+[node name="Wall53" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(2.87889, 0, -0.665167, 0, 1.87831, 0, 7.17485, 0, 0.266896, 1.98094, 1.24181, 51.6395)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
+
+[node name="Wall54" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
+transform = Transform3D(2.87889, 0, -0.665167, 0, 1.87831, 0, 7.17485, 0, 0.266896, -2.66217, 1.24181, 50.8667)
+use_collision = true
+size = Vector3(1.46407, 1, 1)
 
 [node name="Wall33" type="CSGBox3D" parent="World/NavigationRegion3D/Walls/Cave"]
 transform = Transform3D(-4.00861, 0, 0.612838, 0, 1.87831, 0, -6.61041, 0, -0.371631, 9.41385, 2.19419, 2.06168)
