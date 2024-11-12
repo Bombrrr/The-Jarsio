@@ -20,6 +20,10 @@ config/icon="res://Images/icon.svg"
 buses/default_bus_layout="res://Others/default_bus_layout.tres"
 driver/enable_input=true
 
+[autoload]
+
+Audio="*res://Scenes/audio.tscn"
+
 [display]
 
 window/size/mode=4

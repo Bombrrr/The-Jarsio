@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://clljfv3xah32h"]
+[gd_scene load_steps=35 format=3 uid="uid://d4dmbivq0tx78"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://be4ql4aa1pr8e" path="res://Images/mic_24dp_FFFFFF_FILL0_wght400_GRAD200_opsz24.svg" id="12_8n8wj"]
 [ext_resource type="Script" path="res://Scripts/Roof.gd" id="13_76a1b"]
 [ext_resource type="Texture2D" uid="uid://crjsk2vbbwf8" path="res://Images/Jarsio World Map.png" id="14_h2rsu"]
-[ext_resource type="Script" path="res://Scenes/reference.gd" id="14_mj58o"]
+[ext_resource type="Script" path="res://Scripts/reference.gd" id="14_mj58o"]
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="14_sp2wd"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="15_difg5"]
 [ext_resource type="Script" path="res://Scripts/NavigationRegion3D.gd" id="16_5dtdu"]

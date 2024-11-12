@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://1avvg1t0baqx"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_iceul"]
 [ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Images/Untitled(1).jpg" id="2_qk3dg"]
@@ -167,6 +167,8 @@ position = Vector2(593, 367)
 scale = Vector2(0.745833, 1.04259)
 texture = ExtResource("7_a1y5g")
 script = ExtResource("8_nacp0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/Start" to="CanvasLayer2/Black3" method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="CanvasLayer2/Black3" method="_on_settings_pressed"]
