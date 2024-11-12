@@ -5,7 +5,7 @@ signal noise(player)
 @onready var fa = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$AudioStreamPlayer3D.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,7 +20,7 @@ func _on_audio_stream_player_db(dec):
 	var output = clamp((dec*20)/(distance)-0.2, 0, 1)
 	if output > 0.1:
 		emit_signal("noise", p.global_position)
-		#print("found", "/", fa, "/", output)7
+		#print("found", "/", fa, "/", output)
 		fa = (fa+1)
 
 
