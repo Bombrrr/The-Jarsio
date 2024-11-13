@@ -88,6 +88,14 @@ expand_icon = true
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_e0lnd")
+text = "Settings"
+alignment = 0
+expand_icon = true
+
+[node name="Control" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_e0lnd")
 text = "Controls"
 alignment = 0
 expand_icon = true
@@ -172,6 +180,7 @@ script = ExtResource("8_nacp0")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="CanvasLayer2/Black3" method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="CanvasLayer2/Black3" method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control" to="CanvasLayer2/Black3" method="_on_control_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="CanvasLayer2/Black3" method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Hall of art" to="CanvasLayer2/Black3" method="_on_hall_of_art_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="CanvasLayer2/Black3" method="_on_quit_pressed"]

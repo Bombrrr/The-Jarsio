@@ -23,6 +23,7 @@ driver/enable_input=true
 [autoload]
 
 Audio="*res://Scenes/audio.tscn"
+Dif="*res://Scripts/Difficulty.gd"
 
 [display]
 

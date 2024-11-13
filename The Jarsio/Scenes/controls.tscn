@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bowf15yo830p"]
+[gd_scene load_steps=15 format=3 uid="uid://bka3kj8pjixmb"]
 
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="1_rtpg8"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="2_37i5h"]
 [ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Images/Untitled(1).jpg" id="2_g75u4"]
 [ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="3_42vqx"]
-[ext_resource type="Script" path="res://Scripts/Difficulty.gd" id="3_gw22b"]
 [ext_resource type="Script" path="res://Scripts/Black2.gd" id="5_8ca68"]
 [ext_resource type="Shader" path="res://Others/dis.gdshader" id="5_noh0o"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="6_bqd8r"]
@@ -52,28 +51,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rtpg8")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 199.0
 offset_top = 7.0
-offset_right = 803.0
+offset_right = 1015.0
 offset_bottom = 632.0
+theme_override_constants/separation = 70
 
-[node name="Difficulty" type="Button" parent="VBoxContainer"]
+[node name="Control name" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-tooltip_text = "This changes the speed 
-and amount of 
-monsters there are"
-mouse_default_cursor_shape = 2
-theme = ExtResource("2_37i5h")
-text = "No Mode Lol"
-script = ExtResource("3_gw22b")
+theme_override_constants/separation = 15
 
-[node name="return" type="Button" parent="VBoxContainer"]
+[node name="fc" type="Label" parent="HBoxContainer/Control name"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "Move Forward"
+
+[node name="bc" type="Label" parent="HBoxContainer/Control name"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "Move Backward"
+
+[node name="ec" type="Label" parent="HBoxContainer/Control name"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "Cool Emote"
+
+[node name="qc" type="Label" parent="HBoxContainer/Control name"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "Main/Pause Menu"
+
+[node name="return" type="Button" parent="HBoxContainer/Control name"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_37i5h")
 text = "Return to menu"
+
+[node name="Control key" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="fc" type="Label" parent="HBoxContainer/Control key"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "W"
+horizontal_alignment = 1
+
+[node name="bc" type="Label" parent="HBoxContainer/Control key"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "S"
+horizontal_alignment = 1
+
+[node name="ec" type="Label" parent="HBoxContainer/Control key"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "F"
+horizontal_alignment = 1
+
+[node name="qc" type="Label" parent="HBoxContainer/Control key"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+text = "ESC"
+horizontal_alignment = 1
 
 [node name="Untitled(1)" type="Sprite2D" parent="."]
 z_index = -2
@@ -115,7 +157,6 @@ scale = Vector2(0.993229, 1.07222)
 texture = ExtResource("6_bqd8r")
 script = ExtResource("8_4o6sb")
 
-[connection signal="pressed" from="VBoxContainer/Difficulty" to="VBoxContainer/Difficulty" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/return" to="Black3" method="_on_return_pressed"]
+[connection signal="pressed" from="HBoxContainer/Control name/return" to="Black3" method="_on_return_pressed"]
 [connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Black2/Timer2" to="Black2" method="_on_timer_2_timeout"]

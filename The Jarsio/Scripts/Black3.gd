@@ -84,3 +84,10 @@ func _on_hall_of_art_pressed():
 	fadd = true
 	fad = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+func _on_control_pressed():
+	scene = "res://Scenes/controls.tscn"
+	fadd = true
+	fad = false
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
