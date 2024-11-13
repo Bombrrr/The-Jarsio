@@ -167,7 +167,7 @@ navigation_mesh = SubResource("NavigationMesh_gdfcd")
 script = SubResource("GDScript_sotd3")
 
 [node name="Floor" type="CSGBox3D" parent="World/NavigationRegion3D"]
-transform = Transform3D(252.406, 0, 0, 0, 1, 0, 0, 0, 245.632, -2.8749, 0.176273, 1.85578)
+transform = Transform3D(252.406, 0, 0, 0, 1, 0, 0, 0, 245.632, -0.233451, 0.176273, 1.85578)
 use_collision = true
 material = SubResource("StandardMaterial3D_u6vnt")
 
