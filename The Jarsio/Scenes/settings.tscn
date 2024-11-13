@@ -66,8 +66,7 @@ and amount of
 monsters there are"
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_37i5h")
-text = "No Mode Lol"
-script = ExtResource("3_gw22b")
+text = "beginner mode"
 
 [node name="return" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -115,7 +114,10 @@ scale = Vector2(0.993229, 1.07222)
 texture = ExtResource("6_bqd8r")
 script = ExtResource("8_4o6sb")
 
-[connection signal="pressed" from="VBoxContainer/Difficulty" to="VBoxContainer/Difficulty" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/return" to="Black3" method="_on_return_pressed"]
+[node name="Diff" type="Node" parent="."]
+script = ExtResource("3_gw22b")
+
+[connection signal="pressed" from="VBoxContainer/Difficulty" to="Diff" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/return" to="." method="_on_return_pressed"]
 [connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Black2/Timer2" to="Black2" method="_on_timer_2_timeout"]

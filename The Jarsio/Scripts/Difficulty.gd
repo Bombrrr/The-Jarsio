@@ -1,10 +1,9 @@
-extends Button
+extends Node
 
 @onready var mode = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.text = ("beginner mode")
-
+	pass
 # Sets mode variable and text when you press the button
 func _on_pressed():
 	mode = mode+1
@@ -12,12 +11,12 @@ func _on_pressed():
 		mode = 1
 
 	if mode == 1:
-		self.text = ("beginner mode")
+		$"../VBoxContainer/Difficulty".text = ("beginner mode")
 	elif mode == 2:
-		self.text = ("casual mode")
+		$"../VBoxContainer/Difficulty".text = ("casual mode")
 	elif mode == 3:
-		self.text = ("professional mode")
+		$"../VBoxContainer/Difficulty".text = ("professional mode")
 	elif mode == 4:
-		self.text = ("nightmare mode")
+		$"../VBoxContainer/Difficulty".text = ("nightmare mode")
 	else:
-		self.text = ("insane mode")
+		$"../VBoxContainer/Difficulty".text = ("insane mode")
