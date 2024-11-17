@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d4dmbivq0tx78"]
+[gd_scene load_steps=44 format=3 uid="uid://d4dmbivq0tx78"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -6,10 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://dppjoye7xt1so" path="res://Models/finalarmt.glb" id="3_q0xw4"]
 [ext_resource type="Script" path="res://Scripts/hand.gd" id="5_m7shv"]
 [ext_resource type="Script" path="res://Scripts/cam.gd" id="6_wr350"]
+[ext_resource type="PackedScene" uid="uid://cm7muxp0wa3kk" path="res://Models/Pulse Gun/pulsebl.glb" id="7_0ys84"]
 [ext_resource type="PackedScene" uid="uid://cgo5qjbqmd0e" path="res://Models/jarwalllk.glb" id="7_b2bs1"]
 [ext_resource type="Script" path="res://Scripts/AudioStreamPlayer.gd" id="7_d4sf0"]
 [ext_resource type="Script" path="res://Scripts/JarsioNav.gd" id="8_1p5q7"]
+[ext_resource type="PackedScene" uid="uid://bn6nx551rpu4r" path="res://Models/Pulse Gun/pulsebr.glb" id="8_de6gb"]
+[ext_resource type="PackedScene" uid="uid://cos8v0p26udyj" path="res://Models/Pulse Gun/pulsehandle.glb" id="9_c4fix"]
+[ext_resource type="Script" path="res://Models/Pulse Gun/pulsebl.gd" id="9_ho8ns"]
 [ext_resource type="Script" path="res://Scripts/JarsioAnim.gd" id="10_dn5ri"]
+[ext_resource type="PackedScene" uid="uid://coiqi5pr5qxaw" path="res://Models/Pulse Gun/pulsetl.glb" id="10_jowqd"]
+[ext_resource type="PackedScene" uid="uid://bfq4stiwngori" path="res://Models/Pulse Gun/pulsetr.glb" id="11_4x3xe"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar.gd" id="11_ivb1p"]
 [ext_resource type="Texture2D" uid="uid://be4ql4aa1pr8e" path="res://Images/mic_24dp_FFFFFF_FILL0_wght400_GRAD200_opsz24.svg" id="12_8n8wj"]
 [ext_resource type="Script" path="res://Scripts/Roof.gd" id="13_76a1b"]
@@ -110,6 +116,21 @@ script = ExtResource("5_m7shv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.808094, 0)
 fov = 70.0
 script = ExtResource("6_wr350")
+
+[node name="gun" type="Node3D" parent="Player/Neck"]
+transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 0.213399, 0.632898, -0.274235)
+
+[node name="pulsehandle" parent="Player/Neck/gun" instance=ExtResource("9_c4fix")]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0, 0)
+
+[node name="pulsebl" parent="Player/Neck/gun" instance=ExtResource("7_0ys84")]
+script = ExtResource("9_ho8ns")
+
+[node name="pulsebr" parent="Player/Neck/gun" instance=ExtResource("8_de6gb")]
+
+[node name="pulsetl" parent="Player/Neck/gun" instance=ExtResource("10_jowqd")]
+
+[node name="pulsetr" parent="Player/Neck/gun" instance=ExtResource("11_4x3xe")]
 
 [node name="are" type="Area3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84005, -0.0834785)
