@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://d4dmbivq0tx78"]
+[gd_scene load_steps=50 format=3 uid="uid://bm1bdg18mmkc0"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -29,7 +29,7 @@
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="15_difg5"]
 [ext_resource type="Script" path="res://Models/Pulse Gun/pulsetr.gd" id="16_e5ak2"]
 [ext_resource type="Script" path="res://Scripts/fov.gd" id="16_sk2ul"]
-[ext_resource type="Script" path="res://Scenes/laser charge.gd" id="17_3ikdj"]
+[ext_resource type="Script" path="res://Scripts/laser charge.gd" id="17_3ikdj"]
 [ext_resource type="Script" path="res://Scripts/fovv.gd" id="17_h71rh"]
 [ext_resource type="Script" path="res://Scripts/Button3.gd" id="18_puw71"]
 [ext_resource type="Script" path="res://Scripts/Node3.gd" id="19_r6pn0"]
