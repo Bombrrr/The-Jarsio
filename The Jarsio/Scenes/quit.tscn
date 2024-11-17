@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2u3ft4l7f4vr"]
+[gd_scene load_steps=14 format=3 uid="uid://c2u3ft4l7f4vr"]
 
 [ext_resource type="Script" path="res://Scripts/quit.gd" id="1_c86qh"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="2_e2al3"]
-[ext_resource type="Texture2D" uid="uid://cqpxhcpn6o027" path="res://black.jpeg" id="3_j1u0c"]
 [ext_resource type="Script" path="res://Scripts/Black2.gd" id="4_2dx0q"]
 [ext_resource type="Shader" path="res://Others/dis.gdshader" id="5_1yxbm"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="6_rf77j"]
@@ -94,14 +93,14 @@ modulate = Color(1, 1, 1, 0.741176)
 z_index = -1
 position = Vector2(562.679, 227.046)
 scale = Vector2(6.57014, 6.82733)
-texture = ExtResource("3_j1u0c")
+texture = ExtResource("6_rf77j")
 
 [node name="Black2" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.952941)
 z_index = -1
 position = Vector2(562.679, 227.046)
 scale = Vector2(6.57014, 6.82733)
-texture = ExtResource("3_j1u0c")
+texture = ExtResource("6_rf77j")
 script = ExtResource("4_2dx0q")
 
 [node name="Timer" type="Timer" parent="Black2"]
