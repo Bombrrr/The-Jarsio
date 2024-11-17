@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://d4dmbivq0tx78"]
+[gd_scene load_steps=50 format=3 uid="uid://d4dmbivq0tx78"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scripts/AudioStreamPlayer.gd" id="7_d4sf0"]
 [ext_resource type="Script" path="res://Scripts/JarsioNav.gd" id="8_1p5q7"]
 [ext_resource type="PackedScene" uid="uid://bn6nx551rpu4r" path="res://Models/Pulse Gun/pulsebr.glb" id="8_de6gb"]
+[ext_resource type="Script" path="res://Models/Pulse Gun/pulsehandle.gd" id="8_f1cpr"]
 [ext_resource type="PackedScene" uid="uid://cos8v0p26udyj" path="res://Models/Pulse Gun/pulsehandle.glb" id="9_c4fix"]
 [ext_resource type="Script" path="res://Models/Pulse Gun/pulsebl.gd" id="9_ho8ns"]
 [ext_resource type="Script" path="res://Scripts/JarsioAnim.gd" id="10_dn5ri"]
@@ -18,13 +19,17 @@
 [ext_resource type="PackedScene" uid="uid://bfq4stiwngori" path="res://Models/Pulse Gun/pulsetr.glb" id="11_4x3xe"]
 [ext_resource type="Script" path="res://Scripts/ProgressBar.gd" id="11_ivb1p"]
 [ext_resource type="Texture2D" uid="uid://be4ql4aa1pr8e" path="res://Images/mic_24dp_FFFFFF_FILL0_wght400_GRAD200_opsz24.svg" id="12_8n8wj"]
+[ext_resource type="Script" path="res://Models/Pulse Gun/pulsebr.gd" id="12_hmjh7"]
 [ext_resource type="Script" path="res://Scripts/Roof.gd" id="13_76a1b"]
 [ext_resource type="Texture2D" uid="uid://diuhla7k3nvam" path="res://Images/Jarsio World Map.jpg" id="13_s335c"]
 [ext_resource type="Texture2D" uid="uid://crjsk2vbbwf8" path="res://Images/Jarsio World Map.png" id="14_h2rsu"]
+[ext_resource type="Script" path="res://Models/Pulse Gun/pulsetl.gd" id="14_jwdud"]
 [ext_resource type="Script" path="res://Scripts/reference.gd" id="14_mj58o"]
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="14_sp2wd"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="15_difg5"]
+[ext_resource type="Script" path="res://Models/Pulse Gun/pulsetr.gd" id="16_e5ak2"]
 [ext_resource type="Script" path="res://Scripts/fov.gd" id="16_sk2ul"]
+[ext_resource type="Script" path="res://Scenes/laser charge.gd" id="17_3ikdj"]
 [ext_resource type="Script" path="res://Scripts/fovv.gd" id="17_h71rh"]
 [ext_resource type="Script" path="res://Scripts/Button3.gd" id="18_puw71"]
 [ext_resource type="Script" path="res://Scripts/Node3.gd" id="19_r6pn0"]
@@ -35,6 +40,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_on7qf"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 16.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_le4f3"]
 height = 1.40655
@@ -56,6 +69,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore(\"unused_parameter\")
 func _process(delta):
 	pass
 "
@@ -77,6 +91,7 @@ albedo_texture = ExtResource("13_s335c")
 [sub_resource type="Environment" id="Environment_ciuuj"]
 ambient_light_source = 3
 ambient_light_energy = 0.0
+fog_enabled = true
 fog_light_energy = 0.1
 fog_density = 0.6084
 fog_height = -1024.0
@@ -118,19 +133,44 @@ fov = 70.0
 script = ExtResource("6_wr350")
 
 [node name="gun" type="Node3D" parent="Player/Neck"]
-transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 0.213399, 0.632898, -0.274235)
+transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0.015, 0.172332, 0.632898, -0.0381734)
 
 [node name="pulsehandle" parent="Player/Neck/gun" instance=ExtResource("9_c4fix")]
-transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 3.55271e-14, 0, 1, 0, -3.55271e-14, 0, 1, 0, 0, 0)
+script = ExtResource("8_f1cpr")
 
 [node name="pulsebl" parent="Player/Neck/gun" instance=ExtResource("7_0ys84")]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
 script = ExtResource("9_ho8ns")
 
 [node name="pulsebr" parent="Player/Neck/gun" instance=ExtResource("8_de6gb")]
+script = ExtResource("12_hmjh7")
 
 [node name="pulsetl" parent="Player/Neck/gun" instance=ExtResource("10_jowqd")]
+script = ExtResource("14_jwdud")
 
 [node name="pulsetr" parent="Player/Neck/gun" instance=ExtResource("11_4x3xe")]
+script = ExtResource("16_e5ak2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.783249, 0)
+light_energy = 0.1
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Player/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172, 0.77776, -0.194395)
+visible = false
+light_color = Color(0.0901961, 0.14902, 1, 1)
+light_energy = 16.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+omni_range = 0.267725
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Player/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172, 0.787091, -0.189729)
+radius = 0.0328636
+material = SubResource("StandardMaterial3D_on7qf")
+script = ExtResource("17_3ikdj")
 
 [node name="are" type="Area3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84005, -0.0834785)
@@ -1475,6 +1515,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0224, 0.791987, -37.6015)
 
 [connection signal="noise" from="." to="Jarsio" method="_on_world_noise"]
 [connection signal="noise" from="." to="Game UI/CanvasLayer/Control/ProgressBar" method="_on_world_noise"]
+[connection signal="gunclose" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsebl" method="_on_pulsehandle_gunclose"]
+[connection signal="gunclose" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsebr" method="_on_pulsehandle_gunclose"]
+[connection signal="gunclose" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsetl" method="_on_pulsehandle_gunclose"]
+[connection signal="gunclose" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsetr" method="_on_pulsehandle_gunclose"]
+[connection signal="gunopen" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsebl" method="_on_pulsehandle_gunopen"]
+[connection signal="gunopen" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsebr" method="_on_pulsehandle_gunopen"]
+[connection signal="gunopen" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsetl" method="_on_pulsehandle_gunopen"]
+[connection signal="gunopen" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsetr" method="_on_pulsehandle_gunopen"]
+[connection signal="hide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_hide"]
+[connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_instahide"]
+[connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_show"]
 [connection signal="area_entered" from="Player/are" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Jarsio/Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="timeout" from="Jarsio/Timer" to="Jarsio" method="_on_timer_timeout"]
