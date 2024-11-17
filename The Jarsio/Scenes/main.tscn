@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bm1bdg18mmkc0"]
+[gd_scene load_steps=52 format=3 uid="uid://bm1bdg18mmkc0"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -31,12 +31,14 @@
 [ext_resource type="Script" path="res://Scripts/fov.gd" id="16_sk2ul"]
 [ext_resource type="Script" path="res://Scripts/laser charge.gd" id="17_3ikdj"]
 [ext_resource type="Script" path="res://Scripts/fovv.gd" id="17_h71rh"]
+[ext_resource type="Script" path="res://Scenes/OmniLight3D2.gd" id="17_ln7wh"]
 [ext_resource type="Script" path="res://Scripts/Button3.gd" id="18_puw71"]
 [ext_resource type="Script" path="res://Scripts/Node3.gd" id="19_r6pn0"]
 [ext_resource type="PackedScene" uid="uid://vevgfmh6dcgm" path="res://Models/Machine.glb" id="20_75qnq"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="20_qgmty"]
 [ext_resource type="Script" path="res://Scripts/Black31.gd" id="21_vh7pt"]
 [ext_resource type="AudioStream" uid="uid://eo23cqx3laon" path="res://Audio/output.wav" id="27_mxm8h"]
+[ext_resource type="Texture2D" uid="uid://5vcqb4t1k2iy" path="res://Images/pixil-frame-0.png" id="29_nhjvo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7
@@ -157,7 +159,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.783249, 0)
 light_energy = 0.1
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Player/Neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172, 0.77776, -0.194395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172, 0.77776, -0.13366)
 visible = false
 light_color = Color(0.0901961, 0.14902, 1, 1)
 light_energy = 16.0
@@ -165,6 +167,7 @@ light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 0.0
 omni_range = 0.267725
+script = ExtResource("17_ln7wh")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Player/Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172, 0.787091, -0.189729)
@@ -1266,6 +1269,15 @@ offset_bottom = 1000.0
 scale = Vector2(0.240001, 0.240001)
 texture = ExtResource("13_s335c")
 
+[node name="TextureRect" type="TextureRect" parent="Game UI/CanvasLayer"]
+modulate = Color(0.619608, 0.619608, 0.619608, 0.623529)
+offset_left = 540.0
+offset_top = 291.0
+offset_right = 1470.0
+offset_bottom = 1221.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("29_nhjvo")
+
 [node name="Pause Menu" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("14_sp2wd")
@@ -1523,8 +1535,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0224, 0.791987, -37.6015)
 [connection signal="gunopen" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsebr" method="_on_pulsehandle_gunopen"]
 [connection signal="gunopen" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsetl" method="_on_pulsehandle_gunopen"]
 [connection signal="gunopen" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsetr" method="_on_pulsehandle_gunopen"]
+[connection signal="hide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/OmniLight3D2" method="_on_pulsehandle_hide"]
 [connection signal="hide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_hide"]
+[connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/OmniLight3D2" method="_on_pulsehandle_instahide"]
 [connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_instahide"]
+[connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/OmniLight3D2" method="_on_pulsehandle_show"]
 [connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_show"]
 [connection signal="area_entered" from="Player/are" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Jarsio/Area3D" to="." method="_on_area_3d_area_entered"]
