@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bm1bdg18mmkc0"]
+[gd_scene load_steps=54 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -31,7 +31,7 @@
 [ext_resource type="Script" path="res://Scripts/fov.gd" id="16_sk2ul"]
 [ext_resource type="Script" path="res://Scripts/laser charge.gd" id="17_3ikdj"]
 [ext_resource type="Script" path="res://Scripts/fovv.gd" id="17_h71rh"]
-[ext_resource type="Script" path="res://Scenes/OmniLight3D2.gd" id="17_ln7wh"]
+[ext_resource type="Script" path="res://Scripts/OmniLight3D2.gd" id="17_ln7wh"]
 [ext_resource type="Script" path="res://Scripts/Button3.gd" id="18_puw71"]
 [ext_resource type="Script" path="res://Scripts/Node3.gd" id="19_r6pn0"]
 [ext_resource type="PackedScene" uid="uid://vevgfmh6dcgm" path="res://Models/Machine.glb" id="20_75qnq"]
@@ -40,7 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://eo23cqx3laon" path="res://Audio/output.wav" id="27_mxm8h"]
 [ext_resource type="Texture2D" uid="uid://5vcqb4t1k2iy" path="res://Images/pixil-frame-0.png" id="29_nhjvo"]
 [ext_resource type="Texture2D" uid="uid://cawy5vvmyle2m" path="res://Images/batteryno.png" id="30_mv1ir"]
-[ext_resource type="Script" path="res://Scenes/batteryno.gd" id="31_8rayf"]
+[ext_resource type="Script" path="res://Scripts/batteryno.gd" id="31_8rayf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7

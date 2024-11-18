@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://1avvg1t0baqx"]
+[gd_scene load_steps=15 format=3 uid="uid://1avvg1t0baqx"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_iceul"]
 [ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Images/Untitled(1).jpg" id="2_qk3dg"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="3_e0lnd"]
+[ext_resource type="Script" path="res://Scenes/jarred.gd" id="4_rkwjt"]
 [ext_resource type="Script" path="res://Scripts/Black2.gd" id="5_3h0em"]
 [ext_resource type="Shader" path="res://Others/dis.gdshader" id="6_s40cy"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="7_a1y5g"]
@@ -124,7 +125,33 @@ text = "Quit Game"
 alignment = 0
 expand_icon = true
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 337.278
+offset_top = 383.345
+offset_right = 1500.28
+offset_bottom = 705.345
+theme = ExtResource("3_e0lnd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 0)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 300
+button_mask = 4
+text = "the jarsio"
+script = ExtResource("4_rkwjt")
+
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 335.633
 offset_top = 391.572
@@ -194,5 +221,6 @@ text = "*STILL IN BETA*
 [connection signal="pressed" from="VBoxContainer/Credits" to="CanvasLayer2/Black3" method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Hall of art" to="CanvasLayer2/Black3" method="_on_hall_of_art_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="CanvasLayer2/Black3" method="_on_quit_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]
 [connection signal="timeout" from="Black2/Timer2" to="Black2" method="_on_timer_2_timeout"]

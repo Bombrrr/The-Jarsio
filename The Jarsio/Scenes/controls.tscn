@@ -52,68 +52,103 @@ script = ExtResource("1_0ulim")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 7.0
-offset_right = 1015.0
-offset_bottom = 632.0
+offset_left = 179.0
+offset_top = -1.0
+offset_right = 995.0
+offset_bottom = 710.0
 theme_override_constants/separation = 70
 
 [node name="Control name" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 5
 
 [node name="fc" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "Move Forward"
 
 [node name="bc" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "Move Backward"
 
 [node name="ec" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "Cool Emote"
 
 [node name="qc" type="Label" parent="HBoxContainer/Control name"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "Main/Pause Menu"
+
+[node name="cc" type="Label" parent="HBoxContainer/Control name"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
+text = "Charge Gun"
+
+[node name="sc" type="Label" parent="HBoxContainer/Control name"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
+text = "Shoot Gun"
 
 [node name="return" type="Button" parent="HBoxContainer/Control name"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "Return to menu"
 
 [node name="Control key" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 5
 
 [node name="fc" type="Label" parent="HBoxContainer/Control key"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "W"
 horizontal_alignment = 1
 
 [node name="bc" type="Label" parent="HBoxContainer/Control key"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "S"
 horizontal_alignment = 1
 
 [node name="ec" type="Label" parent="HBoxContainer/Control key"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "F"
 horizontal_alignment = 1
 
 [node name="qc" type="Label" parent="HBoxContainer/Control key"]
 layout_mode = 2
 theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
 text = "ESC"
+horizontal_alignment = 1
+
+[node name="cc" type="Label" parent="HBoxContainer/Control key"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
+text = "RMB"
+horizontal_alignment = 1
+
+[node name="sc" type="Label" parent="HBoxContainer/Control key"]
+layout_mode = 2
+theme = ExtResource("2_37i5h")
+theme_override_font_sizes/font_size = 80
+text = "Lmb"
 horizontal_alignment = 1
 
 [node name="Untitled(1)" type="Sprite2D" parent="."]
@@ -155,6 +190,11 @@ position = Vector2(695.5, 287)
 scale = Vector2(0.993229, 1.07222)
 texture = ExtResource("6_bqd8r")
 script = ExtResource("8_4o6sb")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="HBoxContainer/Control name/return" to="Black3" method="_on_return_pressed"]
 [connection signal="timeout" from="Black2/Timer" to="Black2" method="_on_timer_timeout"]
