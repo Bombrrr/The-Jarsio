@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bm1bdg18mmkc0"]
+[gd_scene load_steps=54 format=3 uid="uid://bm1bdg18mmkc0"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -39,6 +39,8 @@
 [ext_resource type="Script" path="res://Scripts/Black31.gd" id="21_vh7pt"]
 [ext_resource type="AudioStream" uid="uid://eo23cqx3laon" path="res://Audio/output.wav" id="27_mxm8h"]
 [ext_resource type="Texture2D" uid="uid://5vcqb4t1k2iy" path="res://Images/pixil-frame-0.png" id="29_nhjvo"]
+[ext_resource type="Texture2D" uid="uid://cawy5vvmyle2m" path="res://Images/batteryno.png" id="30_mv1ir"]
+[ext_resource type="Script" path="res://Scenes/batteryno.gd" id="31_8rayf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7
@@ -1278,6 +1280,19 @@ offset_bottom = 1221.0
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("29_nhjvo")
 
+[node name="TextureRect2" type="TextureRect" parent="Game UI/CanvasLayer"]
+visible = false
+modulate = Color(0.423529, 0.423529, 0.423529, 0.388235)
+offset_left = 438.0
+offset_top = 171.0
+offset_right = 1728.0
+offset_bottom = 1461.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_mv1ir")
+script = ExtResource("31_8rayf")
+
+[node name="Timer" type="Timer" parent="Game UI/CanvasLayer/TextureRect2"]
+
 [node name="Pause Menu" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("14_sp2wd")
@@ -1539,6 +1554,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0224, 0.791987, -37.6015)
 [connection signal="hide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_hide"]
 [connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/OmniLight3D2" method="_on_pulsehandle_instahide"]
 [connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_instahide"]
+[connection signal="nobat" from="Player/Neck/gun/pulsehandle" to="Game UI/CanvasLayer/TextureRect2" method="_on_pulsehandle_nobat"]
 [connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/OmniLight3D2" method="_on_pulsehandle_show"]
 [connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_show"]
 [connection signal="area_entered" from="Player/are" to="." method="_on_area_3d_area_entered"]
@@ -1546,6 +1562,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0224, 0.791987, -37.6015)
 [connection signal="timeout" from="Jarsio/Timer" to="Jarsio" method="_on_timer_timeout"]
 [connection signal="db" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_db"]
 [connection signal="db" from="AudioStreamPlayer" to="Game UI/CanvasLayer/Control/ProgressBar" method="_on_audio_stream_player_db"]
+[connection signal="timeout" from="Game UI/CanvasLayer/TextureRect2/Timer" to="Game UI/CanvasLayer/TextureRect2" method="_on_timer_timeout"]
 [connection signal="pressed" from="Pause Menu/CanvasLayer/HBoxContainer/VBoxContainer/Button" to="Pause Menu" method="_on_button_pressed"]
 [connection signal="pressed" from="Pause Menu/CanvasLayer/HBoxContainer/VBoxContainer/Button2" to="Pause Menu/Node/CanvasLayer/Black3" method="_on_button_2_pressed"]
 [connection signal="fov" from="Pause Menu/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" to="Player/Neck/Camera3D" method="_on_h_slider_fov"]
