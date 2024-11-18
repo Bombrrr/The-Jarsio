@@ -91,3 +91,10 @@ func _on_control_pressed():
 	fadd = true
 	fad = false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
+
+func _on_how_to_pressed():
+	scene = "res://Scenes/How to play.tscn"
+	fadd = true
+	fad = false
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN

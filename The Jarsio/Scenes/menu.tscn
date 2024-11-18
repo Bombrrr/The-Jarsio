@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://1avvg1t0baqx"]
+[gd_scene load_steps=15 format=3 uid="uid://c825s3uujhhx5"]
 
 [ext_resource type="Script" path="res://Scripts/control.gd" id="1_iceul"]
 [ext_resource type="Texture2D" uid="uid://co1yiga5hu71c" path="res://Images/Untitled(1).jpg" id="2_qk3dg"]
 [ext_resource type="Theme" path="res://Others/basthem.tres" id="3_e0lnd"]
-[ext_resource type="Script" path="res://Scenes/jarred.gd" id="4_rkwjt"]
+[ext_resource type="Script" path="res://Scripts/jarred.gd" id="4_kke25"]
 [ext_resource type="Script" path="res://Scripts/Black2.gd" id="5_3h0em"]
 [ext_resource type="Shader" path="res://Others/dis.gdshader" id="6_s40cy"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="7_a1y5g"]
@@ -84,6 +84,14 @@ text = "Start"
 alignment = 0
 expand_icon = true
 
+[node name="HowTo" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_e0lnd")
+text = "How To Play"
+alignment = 0
+expand_icon = true
+
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
@@ -148,7 +156,7 @@ theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 300
 button_mask = 4
 text = "the jarsio"
-script = ExtResource("4_rkwjt")
+script = ExtResource("4_kke25")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -216,6 +224,7 @@ text = "*STILL IN BETA*
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="VBoxContainer/Start" to="CanvasLayer2/Black3" method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/HowTo" to="CanvasLayer2/Black3" method="_on_how_to_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="CanvasLayer2/Black3" method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control" to="CanvasLayer2/Black3" method="_on_control_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="CanvasLayer2/Black3" method="_on_credits_pressed"]
