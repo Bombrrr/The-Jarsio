@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlgb1a5e2bvsn"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_fox25"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hr5u7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3gsi"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.27451)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p70ig"]
+
+[node name="bullet" type="RigidBody3D"]
+axis_lock_linear_y = true
+script = ExtResource("1_fox25")
+
+[node name="model" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="model"]
+mesh = SubResource("SphereMesh_hr5u7")
+surface_material_override/0 = SubResource("StandardMaterial3D_w3gsi")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="model"]
+light_color = Color(0, 0.631373, 1, 1)
+light_energy = 6.405
+omni_range = 1.625
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_p70ig")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

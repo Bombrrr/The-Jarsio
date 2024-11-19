@@ -11,8 +11,15 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var fly = false
 @onready var up = false
 @onready var down = false
+@onready var enable = false
+@onready var inp = false
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	if not enable:
+		inpu(event)
+	
+func inpu(event):
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
@@ -25,7 +32,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			else:camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	inp = Input.is_action_just_released("cam")
+	if inp:
+		if enable:
+			enable = false
+		else: 
+			enable = true
+	if not enable:
+		tick(delta)
+	
+func tick(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	

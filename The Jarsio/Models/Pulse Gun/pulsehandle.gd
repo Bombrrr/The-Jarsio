@@ -8,7 +8,7 @@ signal nobat
 @onready var shot = false
 @onready var fired = false
 @onready var charge = 0
-@onready var battery = 1
+@onready var battery = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):
 	shot = Input.is_action_pressed("charge")
 	if shot:
-		if battery == 1:
+		if battery > 0:
 			charge = clamp(charge + 0.5, 0, 100)
 			if charge== 1:
 				emit_signal("gunopen")
@@ -31,7 +31,7 @@ func _process(delta):
 				emit_signal("instahide")
 				emit_signal("gunclose")
 				charge = 0
-				battery = 0
+				battery = battery - 1
 		else:
 			emit_signal("hide")
 			if charge > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3]
+[gd_scene load_steps=58 format=3 uid="uid://dvktilbexbo84"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -32,8 +32,10 @@
 [ext_resource type="Script" path="res://Scripts/laser charge.gd" id="17_3ikdj"]
 [ext_resource type="Script" path="res://Scripts/fovv.gd" id="17_h71rh"]
 [ext_resource type="Script" path="res://Scripts/OmniLight3D2.gd" id="17_ln7wh"]
+[ext_resource type="Script" path="res://Scripts/bulletsummon.gd" id="17_vdbi1"]
 [ext_resource type="Script" path="res://Scripts/Button3.gd" id="18_puw71"]
 [ext_resource type="Script" path="res://Scripts/Node3.gd" id="19_r6pn0"]
+[ext_resource type="Script" path="res://Scripts/dev cam.gd" id="20_7dy77"]
 [ext_resource type="PackedScene" uid="uid://vevgfmh6dcgm" path="res://Models/Machine.glb" id="20_75qnq"]
 [ext_resource type="Texture2D" uid="uid://bsq1ilyxgqdtk" path="res://Images/Untitled(2).jpg" id="20_qgmty"]
 [ext_resource type="Script" path="res://Scripts/Black31.gd" id="21_vh7pt"]
@@ -41,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://5vcqb4t1k2iy" path="res://Images/pixil-frame-0.png" id="29_nhjvo"]
 [ext_resource type="Texture2D" uid="uid://cawy5vvmyle2m" path="res://Images/batteryno.png" id="30_mv1ir"]
 [ext_resource type="Script" path="res://Scripts/batteryno.gd" id="31_8rayf"]
+[ext_resource type="Script" path="res://Scripts/battery.gd" id="44_ongay"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7
@@ -95,11 +98,12 @@ albedo_texture = ExtResource("13_s335c")
 [sub_resource type="Environment" id="Environment_ciuuj"]
 ambient_light_source = 3
 ambient_light_energy = 0.0
-fog_enabled = true
 fog_light_energy = 0.1
 fog_density = 0.6084
 fog_height = -1024.0
 fog_height_density = 16.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nywlg"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_tqhv2")
@@ -137,7 +141,7 @@ fov = 70.0
 script = ExtResource("6_wr350")
 
 [node name="gun" type="Node3D" parent="Player/Neck"]
-transform = Transform3D(-0.015, 0, -1.31134e-09, 0, 0.015, 0, 1.31134e-09, 0, -0.015, 0.172332, 0.632898, -0.0381734)
+transform = Transform3D(-0.015, 0, -2.26494e-09, 0, 0.015, 0, 2.26494e-09, 0, -0.015, 0.172332, 0.632898, -0.0381734)
 
 [node name="pulsehandle" parent="Player/Neck/gun" instance=ExtResource("9_c4fix")]
 transform = Transform3D(1, 0, 3.55271e-14, 0, 1, 0, -3.55271e-14, 0, 1, 0, 0, 0)
@@ -177,6 +181,10 @@ radius = 0.0328636
 material = SubResource("StandardMaterial3D_on7qf")
 script = ExtResource("17_3ikdj")
 
+[node name="Node3D" type="Node3D" parent="Player/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0937984, 0.83661, -0.488235)
+script = ExtResource("17_vdbi1")
+
 [node name="are" type="Area3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84005, -0.0834785)
 
@@ -186,6 +194,23 @@ shape = SubResource("CapsuleShape3D_le4f3")
 [node name="OmniLight3D" type="OmniLight3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843663, 0)
 visible = false
+omni_range = 4096.0
+
+[node name="dev cam" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99047, 0.236457, 0.0970096)
+visible = false
+script = ExtResource("20_7dy77")
+
+[node name="Neck" type="Node3D" parent="dev cam"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="dev cam/Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.808094, 0)
+fov = 70.0
+script = ExtResource("6_wr350")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="dev cam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843663, 0)
 omni_range = 4096.0
 
 [node name="Jarsio" type="CharacterBody3D" parent="."]
@@ -469,7 +494,7 @@ size = Vector3(1.46407, 1, 1)
 [node name="Wall46" type="CSGBox3D" parent="World/NavigationRegion3D/Cave/Big Outer Loop"]
 transform = Transform3D(4.09011, 0, -0.608193, 0, 1.87831, 0, 6.5603, 0, 0.379186, -23.4076, 1.28762, 34.6108)
 use_collision = true
-size = Vector3(0.868559, 1, 1)
+size = Vector3(1.17332, 1, 1)
 
 [node name="Wall47" type="CSGBox3D" parent="World/NavigationRegion3D/Cave/Big Outer Loop"]
 transform = Transform3D(7.72488, 0, -0.0282386, 0, 1.87831, 0, 0.30459, 0, 0.716159, -5.63566, 1.24181, 45.7516)
@@ -1540,6 +1565,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.8544, 0.791987, -64.7983)
 [node name="location21" type="Marker3D" parent="Location Markers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0224, 0.791987, -37.6015)
 
+[node name="battery" type="Node3D" parent="."]
+script = ExtResource("44_ongay")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="battery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.267623, 0)
+mesh = SubResource("CylinderMesh_nywlg")
+
 [connection signal="noise" from="." to="Jarsio" method="_on_world_noise"]
 [connection signal="noise" from="." to="Game UI/CanvasLayer/Control/ProgressBar" method="_on_world_noise"]
 [connection signal="gunclose" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsebl" method="_on_pulsehandle_gunclose"]
@@ -1554,6 +1586,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0224, 0.791987, -37.6015)
 [connection signal="hide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_hide"]
 [connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/OmniLight3D2" method="_on_pulsehandle_instahide"]
 [connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_instahide"]
+[connection signal="instahide" from="Player/Neck/gun/pulsehandle" to="Player/Neck/Node3D" method="_on_pulsehandle_instahide"]
 [connection signal="nobat" from="Player/Neck/gun/pulsehandle" to="Game UI/CanvasLayer/TextureRect2" method="_on_pulsehandle_nobat"]
 [connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/OmniLight3D2" method="_on_pulsehandle_show"]
 [connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_show"]
