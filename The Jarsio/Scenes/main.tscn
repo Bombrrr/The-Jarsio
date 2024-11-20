@@ -98,6 +98,7 @@ albedo_texture = ExtResource("13_s335c")
 [sub_resource type="Environment" id="Environment_ciuuj"]
 ambient_light_source = 3
 ambient_light_energy = 0.0
+fog_enabled = true
 fog_light_energy = 0.1
 fog_density = 0.6084
 fog_height = -1024.0
