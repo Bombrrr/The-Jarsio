@@ -36,3 +36,10 @@ func _on_button_2_pressed():
 	fadd = true
 	fad = false
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
+
+func _on_timer_timeout():
+	fadd = true
+	fad = false
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	

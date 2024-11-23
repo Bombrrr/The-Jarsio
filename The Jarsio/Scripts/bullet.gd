@@ -12,3 +12,9 @@ func _process(delta):
 
 func _on_timer_timeout():
 	self.queue_free()
+
+
+func _on_area_3d_area_entered(area):
+	if area.is_in_group("monster"):
+		print("monster")
+		self.queue_free()

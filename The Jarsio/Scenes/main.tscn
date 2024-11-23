@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dvktilbexbo84"]
+[gd_scene load_steps=62 format=3 uid="uid://d0diqofxsolyu"]
 
 [ext_resource type="Script" path="res://Scripts/Jarsio.gd" id="1_tqhv2"]
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="2_saf7p"]
@@ -44,6 +44,9 @@
 [ext_resource type="Texture2D" uid="uid://cawy5vvmyle2m" path="res://Images/batteryno.png" id="30_mv1ir"]
 [ext_resource type="Script" path="res://Scripts/batteryno.gd" id="31_8rayf"]
 [ext_resource type="Script" path="res://Scripts/battery.gd" id="44_ongay"]
+[ext_resource type="PackedScene" uid="uid://djkldmxdm3n0q" path="res://Models/batteryfloat.glb" id="45_cpc2v"]
+[ext_resource type="PackedScene" uid="uid://y8hedef41v3b" path="res://Models/JarsioAttack.glb" id="45_eiukb"]
+[ext_resource type="Script" path="res://Scripts/Death Cam.gd" id="47_c5ynh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_668xl"]
 height = 1.7
@@ -83,6 +86,9 @@ func _process(delta):
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6vnt"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nj3nw"]
+size = Vector3(1.02849, 1, 1.10587)
+
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_ggsek"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60ovy"]
@@ -98,13 +104,14 @@ albedo_texture = ExtResource("13_s335c")
 [sub_resource type="Environment" id="Environment_ciuuj"]
 ambient_light_source = 3
 ambient_light_energy = 0.0
-fog_enabled = true
 fog_light_energy = 0.1
 fog_density = 0.6084
 fog_height = -1024.0
 fog_height_density = 16.0
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_nywlg"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_w1386"]
+height = 3.91905
+radius = 0.652943
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_tqhv2")
@@ -183,10 +190,10 @@ material = SubResource("StandardMaterial3D_on7qf")
 script = ExtResource("17_3ikdj")
 
 [node name="Node3D" type="Node3D" parent="Player/Neck"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0937984, 0.83661, -0.488235)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00767169, 0.83661, -0.488235)
 script = ExtResource("17_vdbi1")
 
-[node name="are" type="Area3D" parent="Player"]
+[node name="are" type="Area3D" parent="Player" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84005, -0.0834785)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/are"]
@@ -227,7 +234,7 @@ script = ExtResource("10_dn5ri")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Jarsio"]
 
-[node name="Area3D" type="Area3D" parent="Jarsio"]
+[node name="Area3D" type="Area3D" parent="Jarsio" groups=["monster"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Jarsio/Area3D"]
 shape = SubResource("CapsuleShape3D_le4f3")
@@ -604,30 +611,72 @@ transform = Transform3D(1.51457, 0, -0.702825, 0, 1.87831, 0, 7.58107, 0, 0.1404
 use_collision = true
 size = Vector3(1.43143, 1, 1)
 
+[node name="Area3D" type="Area3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall148" groups=["wall"]]
+transform = Transform3D(0.129351, 0, 0, 0, 0.532394, 0, 0, 0, 1.39525, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall148/Area3D"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, 0, 0, 0)
+shape = SubResource("BoxShape3D_nj3nw")
+
 [node name="Wall142" type="CSGBox3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop"]
 transform = Transform3D(-7.59354, 0, 0.134495, 0, 1.87831, 0, -1.45074, 0, -0.703982, 40.8192, 1.28762, -31.4223)
 use_collision = true
 size = Vector3(2.38773, 1, 1)
+
+[node name="Area3D" type="Area3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall142" groups=["wall"]]
+transform = Transform3D(0.129351, 0, 0, 0, 0.532394, 0, 0, 0, 1.39525, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall142/Area3D"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, 0, 0, 0)
+shape = SubResource("BoxShape3D_nj3nw")
 
 [node name="Wall144" type="CSGBox3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop"]
 transform = Transform3D(-4.58548, 0, 0.577027, 0, 1.87831, 0, -6.22414, 0, -0.425111, 54.5748, 1.28762, -22.5102)
 use_collision = true
 size = Vector3(2.38773, 1, 1)
 
+[node name="Area3D" type="Area3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall144" groups=["wall"]]
+transform = Transform3D(0.129351, 0, 0, 0, 0.532394, 0, 0, 0, 1.39525, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall144/Area3D"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, 0, 0, 0)
+shape = SubResource("BoxShape3D_nj3nw")
+
 [node name="Wall145" type="CSGBox3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop"]
 transform = Transform3D(-7.59354, 0, 0.134495, 0, 1.87831, 0, -1.45074, 0, -0.703982, 41.2207, 1.28762, -27.9349)
 use_collision = true
 size = Vector3(1.57789, 1, 1)
+
+[node name="Area3D" type="Area3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall145" groups=["wall"]]
+transform = Transform3D(0.129351, 0, 0, 0, 0.532394, 0, 0, 0, 1.39525, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall145/Area3D"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, 0, 0, 0)
+shape = SubResource("BoxShape3D_nj3nw")
 
 [node name="Wall146" type="CSGBox3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop"]
 transform = Transform3D(-4.46228, 0, 0.58527, 0, 1.87831, 0, -6.31305, 0, -0.41369, 52.3145, 1.28762, -19.4014)
 use_collision = true
 size = Vector3(2.38773, 1, 1)
 
+[node name="Area3D" type="Area3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall146" groups=["wall"]]
+transform = Transform3D(0.129351, 0, 0, 0, 0.532394, 0, 0, 0, 1.39525, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall146/Area3D"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, 0, 0, 0)
+shape = SubResource("BoxShape3D_nj3nw")
+
 [node name="Wall150" type="CSGBox3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop"]
 transform = Transform3D(1.94402, 0, 0.693684, 0, 1.87831, 0, -7.48247, 0, 0.180225, 57.419, 1.28762, -11.4333)
 use_collision = true
 size = Vector3(0.189207, 1, 1)
+
+[node name="Area3D" type="Area3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall150" groups=["wall"]]
+transform = Transform3D(0.129351, 0, 0, 0, 0.532394, 0, 0, 0, 1.39525, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/NavigationRegion3D/Cave/Flat Outer Loop/Wall150/Area3D"]
+transform = Transform3D(7.73088, 0, 0, 0, 1.87831, 0, 0, 0, 0.716716, 0, 0, 0)
+shape = SubResource("BoxShape3D_nj3nw")
 
 [node name="Small Outer Loop" type="Node" parent="World/NavigationRegion3D/Cave"]
 
@@ -1228,6 +1277,12 @@ visible = false
 use_collision = true
 size = Vector3(0.165734, 1, 1.63097)
 
+[node name="Sprite3D" type="Sprite3D" parent="World/NavigationRegion3D/Models/Machine"]
+transform = Transform3D(-4.37114e-11, 0, 0.001, 0, 0.001, 0, -0.001, 0, -4.37114e-11, 0.0167205, 1.39908, 4.76837e-07)
+modulate = Color(0, 0.733333, 0, 1)
+pixel_size = 1.0
+texture = ExtResource("13_s335c")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 stream = SubResource("AudioStreamMicrophone_ggsek")
@@ -1567,12 +1622,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.8544, 0.791987, -64.7983)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0224, 0.791987, -37.6015)
 
 [node name="battery" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.09301, 1.46516, 0)
 script = ExtResource("44_ongay")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="battery"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.267623, 0)
-mesh = SubResource("CylinderMesh_nywlg")
+[node name="batteryfloat" parent="battery" instance=ExtResource("45_cpc2v")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 1.47848, 0)
 
+[node name="Area3D" type="Area3D" parent="battery"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="battery/Area3D"]
+shape = SubResource("CylinderShape3D_w1386")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="battery"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.881397, 0)
+light_color = Color(0, 0.415686, 1, 1)
+light_energy = 12.746
+light_indirect_energy = 0.0
+omni_range = 4.393
+
+[node name="Death Scene" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2.5, 15)
+
+[node name="JarsioAttack" parent="Death Scene" instance=ExtResource("45_eiukb")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
+visible = false
+script = ExtResource("47_c5ynh")
+
+[node name="Death Cam" type="Camera3D" parent="Death Scene"]
+transform = Transform3D(-3.8751e-08, 0.462693, 0.886519, 2.02249e-08, 0.886519, -0.462693, -1, -1.77636e-15, -4.37114e-08, 0.961742, 0.66307, 0)
+fov = 60.0
+
+[node name="Timer" type="Timer" parent="Death Scene"]
+
+[connection signal="caught" from="." to="Death Scene/JarsioAttack" method="_on_world_caught"]
 [connection signal="noise" from="." to="Jarsio" method="_on_world_noise"]
 [connection signal="noise" from="." to="Game UI/CanvasLayer/Control/ProgressBar" method="_on_world_noise"]
 [connection signal="gunclose" from="Player/Neck/gun/pulsehandle" to="Player/Neck/gun/pulsebl" method="_on_pulsehandle_gunclose"]
@@ -1593,6 +1675,7 @@ mesh = SubResource("CylinderMesh_nywlg")
 [connection signal="show" from="Player/Neck/gun/pulsehandle" to="Player/Neck/CSGSphere3D" method="_on_pulsehandle_show"]
 [connection signal="area_entered" from="Player/are" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Jarsio/Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Jarsio/Area3D" to="Jarsio" method="_on_area_3d_area_entered"]
 [connection signal="timeout" from="Jarsio/Timer" to="Jarsio" method="_on_timer_timeout"]
 [connection signal="db" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_db"]
 [connection signal="db" from="AudioStreamPlayer" to="Game UI/CanvasLayer/Control/ProgressBar" method="_on_audio_stream_player_db"]
@@ -1603,3 +1686,6 @@ mesh = SubResource("CylinderMesh_nywlg")
 [connection signal="fov" from="Pause Menu/CanvasLayer/HBoxContainer/VBoxContainer/HSlider" to="Pause Menu/CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/Label2" method="_on_h_slider_fov"]
 [connection signal="pressed" from="Pause Menu/CanvasLayer/HBoxContainer/VBoxContainer/Button3" to="Pause Menu/Node" method="_on_button_3_pressed"]
 [connection signal="grav" from="Pause Menu/Node" to="Player" method="_on_node_grav"]
+[connection signal="getbattery" from="battery" to="Player/Neck/gun/pulsehandle" method="_on_battery_getbattery"]
+[connection signal="area_entered" from="battery/Area3D" to="battery" method="_on_area_3d_area_entered"]
+[connection signal="timeout" from="Death Scene/Timer" to="Pause Menu/Node/CanvasLayer/Black3" method="_on_timer_timeout"]

@@ -9,6 +9,7 @@ transparency = 1
 albedo_color = Color(0, 1, 1, 0.27451)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p70ig"]
+radius = 0.51537
 
 [node name="bullet" type="RigidBody3D"]
 axis_lock_linear_y = true
@@ -34,4 +35,11 @@ disabled = true
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Area3D" type="Area3D" parent="." groups=["bullet"]]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_p70ig")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

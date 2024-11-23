@@ -6,7 +6,7 @@ func _ready():
 	pass
 # Sets mode variable and text when you press the button
 func _on_pressed():
-	mode = mode+1
+	mode = mode + 1
 	if mode == 6:
 		mode = 1
 

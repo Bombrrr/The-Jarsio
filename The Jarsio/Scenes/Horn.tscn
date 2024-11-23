@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c06ao8f4njs5c"]
+
+[ext_resource type="PackedScene" uid="uid://cclascl4e7kc5" path="res://Models/hornfloat.glb" id="1_alpf6"]
+[ext_resource type="Script" path="res://Scenes/Horn.gd" id="1_p2n2t"]
+
+[node name="Horn" type="Node3D"]
+script = ExtResource("1_p2n2t")
+
+[node name="hornfloat" parent="." instance=ExtResource("1_alpf6")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)

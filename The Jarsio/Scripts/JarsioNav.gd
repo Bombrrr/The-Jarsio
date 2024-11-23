@@ -1,10 +1,10 @@
 extends CharacterBody3D
 @onready var rand
 @onready var nav = $NavigationAgent3D
-@onready var speed = 2
+@onready var speedorig = 2
+@onready var speed = speedorig
 @onready var tim = 1
 @onready var loc = Vector3(global_position)
-@onready var heard = 10
 @onready var randpos
 @onready  var coords = [
 	$"../Location Markers/location1".global_position,
@@ -31,9 +31,7 @@ extends CharacterBody3D
  ]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	time()
-	rand = coords[randi() % coords.size()]
-	randpos = Vector3(rand.x, position.y, rand.y)
+	newpos()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
@@ -47,32 +45,34 @@ func _process(delta):
 func mov(delta):
 	look_at(global_transform.origin + velocity)
 	nav.target_position = randpos
-	if heard == 1:
-		if(abs(randpos.x - global_position.x) <= 1 and abs(randpos.z - global_position.z) <=1 or tim <= 0 ):
-			rand = coords[randi() % coords.size()]
-			randpos = Vector3(rand.x, position.y, rand.y)
-			time()
-	else:
-		if(abs(randpos.x - global_position.x) <= 1 and abs(randpos.z - global_position.z) <= 1 or tim <= 0 ):
-			rand = coords[randi() % coords.size()]
-			randpos = Vector3(rand.x, position.y, rand.y)
-			time()
+	
+	if(abs(randpos.x - global_position.x) <= 1 and abs(randpos.z - global_position.z) <= 1 or tim <= 0 ):
+		newpos()
 
 func time():
 	$Timer.start()
 	tim = 1
 
-@warning_ignore("unused_parameter")
-func _on_area_3d_area_entered(area):
-	rand = coords[randi() % coords.size()]
-	randpos = Vector3(rand.x, position.y, rand.y)
 
 func _on_world_noise(player):
-	heard = 1
 	randpos = player
+	time()
 
 
 func _on_timer_timeout():
 	if(abs(loc.x - global_position.x) <= 1 and abs(loc.z - global_position.z) <=1):
 		tim = 0
 	else: loc = Vector3(global_position)
+
+
+func _on_area_3d_area_entered(area):
+	if area.is_in_group("bullet"):
+		randpos = $"../Location Markers/location14".global_position
+		$Timer.stop()
+		speed = speedorig * 2
+
+
+func newpos():
+	rand = coords[randi() % coords.size()]
+	randpos = Vector3(rand.x, position.y, rand.y)
+	speed = speedorig

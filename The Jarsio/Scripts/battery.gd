@@ -1,5 +1,5 @@
 extends Node3D
-
+signal getbattery
 @onready  var coords = [
 	$"../Location Markers/location1".global_position,
 	$"../Location Markers/location2".global_position,
@@ -12,15 +12,26 @@ extends Node3D
 	$"../Location Markers/location18".global_position,
 	$"../Location Markers/location20".global_position,
  ]
-@onready  var rand = Vector3(coords[randi() % coords.size()])
-@onready var pos = Vector3(rand)
-@onready var dir = 1
+@onready  var rand
+@onready var pos
+@onready var dir
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.global_position = pos
-
+	newpos()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$batteryfloat/AnimationPlayer.play("Cylinder001Action")
+	$batteryfloat.rotate_y(0.0069420)
 
+
+func _on_area_3d_area_entered(area):
+	if area.is_in_group("player"):
+		self.hide()
+		emit_signal("getbattery")
+
+func newpos():
+	var rand = Vector3(coords[randi() % coords.size()])
+	var pos = Vector3(rand)
+	var dir = 1
+	self.global_position = pos
