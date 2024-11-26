@@ -9,7 +9,6 @@ var maxhorns : int
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AudioStreamPlayer3D.play()
-	print(maxhorns, "|" ,horns, "|" ,Dif.mode)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")

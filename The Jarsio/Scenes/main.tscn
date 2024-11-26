@@ -254,6 +254,8 @@ omni_range = 4096.0
 
 [node name="Timer" type="Timer" parent="Jarsio"]
 
+[node name="Timer2" type="Timer" parent="Jarsio"]
+
 [node name="World" type="Node3D" parent="."]
 
 [node name="Roof" type="CSGBox3D" parent="World"]

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 3.0
+var SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
@@ -36,8 +36,10 @@ func _physics_process(delta: float) -> void:
 	if inp:
 		if enable:
 			enable = false
+			SPEED = 6
 		else: 
 			enable = true
+			SPEED = 3
 	if not enable:
 		tick(delta)
 	

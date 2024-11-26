@@ -1,10 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://c06ao8f4njs5c"]
+[gd_scene load_steps=4 format=3 uid="uid://dpi6yma3o43jg"]
 
+[ext_resource type="Script" path="res://Scripts/Horn.gd" id="1_3mn2s"]
 [ext_resource type="PackedScene" uid="uid://cclascl4e7kc5" path="res://Models/hornfloat.glb" id="1_alpf6"]
-[ext_resource type="Script" path="res://Scenes/Horn.gd" id="1_p2n2t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_duuu0"]
+radius = 1.03668
+height = 6.0
 
 [node name="Horn" type="Node3D"]
-script = ExtResource("1_p2n2t")
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+script = ExtResource("1_3mn2s")
 
 [node name="hornfloat" parent="." instance=ExtResource("1_alpf6")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="hornfloat"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0.287312)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hornfloat/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.687986, -0.349766)
+shape = SubResource("CapsuleShape3D_duuu0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.0295993, -0.062409)
+light_color = Color(0.509804, 0.47451, 0.231373, 1)
+light_energy = 12.746
+light_indirect_energy = 0.0
+omni_range = 3.0
